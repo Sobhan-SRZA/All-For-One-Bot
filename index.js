@@ -2,16 +2,16 @@
 //express
 const express = require('express');
 const app = express();
-const port = 5000;
+const port = 3000;
 
-app.get('/', (req, res) => res.send('Bot Is Working Well!'));
+app.get('/', (req, res) => res.send('kharkosse botet run shod!'));
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 //===========================================================================================================//
 //consol
 const fs = require('fs');
-const discord = require('discord.js');
-const client = new discord.Client({ disableMentions: 'everyone' });
+const Discord = require('discord.js');
+const client = new Discord.Client({ disableMentions: 'everyone' });
 const { Player } = require('discord-player');
 
 const sezar = require ('./config/bot')
@@ -20,7 +20,7 @@ client.player = new Player(client);
 client.config = require('./config/bot');
 client.emotes = client.config.emojis;
 client.filters = client.config.filters;
-client.commands = new discord.Collection();
+client.commands = new Discord.Collection();
 client.login(client.config.discord.token);
 fs.readdirSync('./commands').forEach(dirs => {
     const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
@@ -46,21 +46,21 @@ for (const file of player) {
     const event = require(`./player/${file}`);
     client.player.on(file.split(".")[0], event.bind(null, client));
 };
-
-
 //===========================================================================================================//
 //status
 client.on("ready", () => {
   function YousamPower() {
-    let sezar = [`${prefix}play` , `${prefix}help` , `🔰Sizar Team🔰` ]
+     const count = client.guilds.cache.get("912596015075455016")
+    let sezar = [`${count.memberCount} Members` , `${prefix}help`]
     let Power = Math.floor(Math.random() * sezar.length);
-    client.user.setActivity(sezar[Power], {type: "PLAYING"});//can be LISTENING, WATCHING, PLAYING, STREAMING
+    client.user.setActivity(sezar[Power], {type: "WATCHING"});//can be LISTENING, WATCHING, PLAYING, STREAMING
   }; setInterval(YousamPower, 5000)
     client.user.setStatus("idle")//can be invesible, online, idle, dnd
 });
 
 //===========================================================================================================//
 //help command
+const discord = require('discord.js');
 client.on('message', message => {
     let args = message.content.substring(prefix.length).split("help")
     if (message.content.startsWith(`${prefix}help`)) {
@@ -165,6 +165,7 @@ client.on('message', message => {
             message.channel.send(self)
     }
 })
+
 
 //===========================================================================================================//
 //serverlist
