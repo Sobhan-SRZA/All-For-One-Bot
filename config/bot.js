@@ -8,8 +8,8 @@ module.exports = {
     },
 
     discord: {
-        token: 'BOT_TOKEN',
-        prefix: 'BOT_PREFIX',
+        token: process.env.TOKEN,
+        prefix: process.env.PREFIX,
     },
 
     filters: ['8D', 'gate', 'haas', 'phaser', 'treble', 'tremolo', 'vibrato', 'reverse', 'karaoke', 'flanger', 'mcompand', 'pulsator', 'subboost', 'bassboost', 'vaporwave', 'nightcore', 'normalizer', 'surrounding'],
