@@ -1,7 +1,7 @@
-module.exports = (client, message) => {
+module.exports = async (client, message) => {
     if (message.author.bot || message.channel.type === 'dm') return;
 
-    const prefix = client.config.discord.prefix;
+    const prefix = await require("quick.db").fetch(`prefix_${message.guild.id}`)||process.env.PREFIX;
 
     if (message.content.indexOf(prefix) !== 0) return;
 

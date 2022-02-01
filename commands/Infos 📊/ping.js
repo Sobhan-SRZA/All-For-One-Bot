@@ -1,13 +1,10 @@
+const Discord = require("discord.js");
 module.exports = {
     name: 'ping',
     aliases: [],
     category: 'Infos',
     utilisation: '{prefix}ping',
-
     execute(client, message) {
-
-const Discord = require('discord.js')
-//ping
             var states = "🟢 Excellent";
             var states2 = "🟢 Excellent";
             var msg = `${Date.now() - message.createdTimestamp}`;
@@ -26,10 +23,8 @@ const Discord = require('discord.js')
       pingEmbed.addField("**Time Taken:**", `\`${msg + " ms 📶 | " + states}\``, true)
       pingEmbed.addField("**WebSocket:**", `\`${api + " ms 📶 | " + states2}\``, true)
       pingEmbed.setTimestamp();
-      pingEmbed.setFooter(`Requested by ${message.author.username}`, `${message.author.displayAvatarURL()}`);
-   message.channel.send(pingEmbed);
-    
-     
-   }
+      pingEmbed.setFooter(`Requested by ${message.author.username} | `, `${message.author.displayAvatarURL()}`);
 
+        message.channel.send(pingEmbed);
+    },
 };

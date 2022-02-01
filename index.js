@@ -15,6 +15,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({ disableMentions: 'everyone' });  
 const disbut = require('discord-buttons'); // Define discord-buttons module with npm i discord-buttons
 disbut(client);
+require('discord-buttons')(client);
 const { Player } = require('discord-player');
 client.player = new Player(client);
 const {createPages} = require('discord-buttons-page-v12');
