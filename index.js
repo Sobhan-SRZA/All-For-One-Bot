@@ -73,3 +73,21 @@ client.on("ready", () => {
    client.user.setActivity(sezar[Power], {type: statusPlay[godratPlay]});
         }; setInterval(srza, 3000)
 });
+
+//===========================================================================================================//
+//prefix of bot
+client.on('message', async message => {
+if(!message.guild || message.author.bot) return;
+if (message.content === `${prefix}prefix`) {
+              var prf = await require('quick.db').fetch(`prefix_${message.guild.id}`)||process.env.PREFIX;
+                   let errorprefixEmbed = new Discord.MessageEmbed()
+                              .setColor("RANDOM")
+                           .setThumbnail(client.user.displayAvatarURL())
+                               .setTimestamp(Date.now())
+                               .setAuthor(`prefix of ${client.user.tag} shows👌🏻`,client.user.displayAvatarURL())
+                                .setFooter(`prefix shows to ${message.author.tag} |`,message.author.displayAvatarURL())
+                               .setDescription(`Prefix Dar In Server **${prf}** ASt`)
+                message.channel.send(errorprefixEmbed)
+
+    }
+})
