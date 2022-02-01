@@ -1,3 +1,7 @@
+[![Deploy on Herokucd](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Sobhan-SRZA/Moderetion-Bot/)
+
+[![Use on Replit](https://repl.it/badge/github/Sobhan-SRZA/Moderetion-Bot/)](https://repl.it/github/Sobhan-SRZA/Moderetion-Bot/)
+
 # Music-bot
 A complete code to download for a music bot. Using a module (discord-player) 🎧
 
