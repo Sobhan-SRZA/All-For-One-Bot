@@ -24,7 +24,7 @@ Looking for a code for a music bot ? This fully open source code is made for you
 
 If you need help with this project, to get support faster you can join the help server by just clicking [here](https://discord.gg/devsclub).
 
-### ⚡ Installation
+## ⚡ Installation
 [![Deploy on Herokucd](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Sobhan-SRZA/Moderetion-Bot/)
 
 [![Use on Replit](https://repl.it/badge/github/Sobhan-SRZA/Moderetion-Bot/)](https://repl.it/github/Sobhan-SRZA/Moderetion-Bot/)
@@ -74,7 +74,7 @@ pm2 start index.js --name "MusicBot"
 
 All you have to do is turn on your bot !
 
-### 🎵 Music commands
+## 🎵 Music commands
 
 ```
 play <name/URL>, play music in a voice channel.
@@ -93,7 +93,7 @@ filter <filter>, add / remove filter.
 w-filters, see filters.
 ```
 
-### 💡 General commands
+## 💡 General commands
 
 ```
 ping, see the bot latency.
@@ -101,7 +101,7 @@ help, see the list of available commands.
 debug, see number of voice connections.
 ```
 
-### 🏓 Utilities (to change the code)
+## 🏓 Utilities (to change the code)
 
 Find all the functions available on the official code [right here](https://github.com/Sobhan-SRZA/Moderetion-Bot).
 
