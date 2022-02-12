@@ -1,6 +1,21 @@
-[![Deploy on Herokucd](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Sobhan-SRZA/Moderetion-Bot/)
 
-[![Use on Replit](https://repl.it/badge/github/Sobhan-SRZA/Moderetion-Bot/)](https://repl.it/github/Sobhan-SRZA/Moderetion-Bot/)
+
+## My addresses in cyberspace 👇🏼🙃📡
+
+
+[Twich](https://www.twitch.tv/sobhan_srza) address
+ 
+My [Telegram](https://t.me/SobhanSRZA) Channel Address
+
+[Instegram](https://www.instagram.com/srza._.gamer) address
+ 
+Address of the [Aparat](https://www.aparat.com/Sobhan.SRZA)
+
+[YouTube](https://b2n.ir/srza.-.gamer) address
+
+[Discord](https://discord.gg/bNpqrdXNNn)address
+
+[YouTube](https://b2n.ir/srza._.action) address
 
 # Music-bot
 A complete code to download for a music bot. Using a module (discord-player) 🎧
@@ -10,6 +25,9 @@ Looking for a code for a music bot ? This fully open source code is made for you
 If you need help with this project, to get support faster you can join the help server by just clicking [here](https://discord.gg/devsclub).
 
 ### ⚡ Installation
+[![Deploy on Herokucd](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Sobhan-SRZA/Moderetion-Bot/)
+
+[![Use on Replit](https://repl.it/badge/github/Sobhan-SRZA/Moderetion-Bot/)](https://repl.it/github/Sobhan-SRZA/Moderetion-Bot/)
 
 Well, let's start by downloading the code.
 Go to the folder `config` then the file `bot.js`.
@@ -85,6 +103,6 @@ debug, see number of voice connections.
 
 ### 🏓 Utilities (to change the code)
 
-Find all the functions available on the official code [right here](https://github.com/Androz2091/discord-player).
+Find all the functions available on the official code [right here](https://github.com/Sobhan-SRZA/Moderetion-Bot).
 
 This is used with [discord.js](https://www.npmjs.com/package/discord.js) and [discord-player](https://www.npmjs.com/package/discord-player).
