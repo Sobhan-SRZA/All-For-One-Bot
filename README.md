@@ -106,3 +106,7 @@ debug, see number of voice connections.
 Find all the functions available on the official code [right here](https://github.com/Sobhan-SRZA/Moderetion-Bot).
 
 This is used with [discord.js](https://www.npmjs.com/package/discord.js) and [discord-player](https://www.npmjs.com/package/discord-player).
+
+
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=Moderetion-Bot&theme=dracula)](https://github.com/Sobhan-SRZA/Moderetion-Bot/)
+
