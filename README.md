@@ -25,9 +25,9 @@ Looking for a code for a music bot ? This fully open source code is made for you
 If you need help with this project, to get support faster you can join the help server by just clicking [here](https://discord.gg/devsclub).
 
 ## ⚡ Installation
-[![Deploy on Herokucd](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Sobhan-SRZA/Moderetion-Bot/)
+[![Deploy on Herokucd](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Sobhan-SRZA/Moderation-Bot/)
 
-[![Use on Replit](https://repl.it/badge/github/Sobhan-SRZA/Moderetion-Bot/)](https://repl.it/github/Sobhan-SRZA/Moderetion-Bot/)
+[![Use on Replit](https://repl.it/badge/github/Sobhan-SRZA/Moderetion-Bot/)](https://repl.it/github/Sobhan-SRZA/Moderation-Bot/)
 
 Well, let's start by downloading the code.
 Go to the folder `config` then the file `bot.js`.
@@ -103,10 +103,10 @@ debug, see number of voice connections.
 
 ## 🏓 Utilities (to change the code)
 
-Find all the functions available on the official code [right here](https://github.com/Sobhan-SRZA/Moderetion-Bot).
+Find all the functions available on the official code [right here](https://github.com/Sobhan-SRZA/Moderation-Bot).
 
 This is used with [discord.js](https://www.npmjs.com/package/discord.js) and [discord-player](https://www.npmjs.com/package/discord-player).
 
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=Moderetion-Bot&theme=dracula)](https://github.com/Sobhan-SRZA/Moderetion-Bot/)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=Moderation-Bot&theme=dracula)](https://github.com/Sobhan-SRZA/Moderation-Bot/)
 
