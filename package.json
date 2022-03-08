@@ -3,10 +3,17 @@
   "main": "index.js",
   "author": "Mr.SIN RE#1528",
   "version": "5.0.0",
-  "repository": "https://github.com/Sobhan-SRZA/Moderation-Bot",
   "description": "this is wonderful moderation. this bot is fun & music bot.",
+  "bugs": {
+    "url": "https://discord.gg/rsQGcSfyJs"
+  },
+  "homepage": "https://github.com/Sobhan-SRZA/Moderation-Bot#readme",
   "scripts": {
     "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sobhan-SRZA/Moderation-Bot.git"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
