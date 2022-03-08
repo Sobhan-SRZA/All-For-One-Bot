@@ -7,7 +7,7 @@ module.exports = {
      description: 'for report bot bugs to developers :)',
 
   async execute(client, message, args) { 
-        const choice = args[0];
+        const choice = args.slice().join(" ");
         if (!choice){
  return message.channel.send("لطفا متن گزارشتان را رو به روی کامند بنویسید تا بررسی شود")
 }else
