@@ -2,8 +2,8 @@
   "name": "Shotor-Farangi",
   "main": "index.js",
   "author": "Mr.SIN RE#1528",
-  "version": "5.2.1",
-  "repository": "https://github.com/Sobhan-SRZA/Moderetion-Bot",
+  "version": "5.0.0",
+  "repository": "https://github.com/Sobhan-SRZA/Moderation-Bot",
   "description": "this is wonderful moderation. this bot is fun & music bot.",
   "scripts": {
     "start": "node index.js"
@@ -11,17 +11,27 @@
   "dependencies": {
     "@discordjs/opus": "^0.3.3",
     "akaneko": "^5.2.2",
+    "aki-api": "^6.0.8",
+    "axios": "^0.25.0",
     "canvas": "^2.9.0",
     "discord-buttons": "^4.0.0",
     "discord-buttons-page-v12": "^1.0.6",
     "discord-player": "^3.3.2",
     "discord.js": "^12.5.1",
+    "easy-games-js": "^1.2.1",
     "express": "^4.17.1",
     "ffmpeg-static": "^4.2.7",
+    "mathjs": "^10.1.1",
     "moment": "^2.29.1",
+    "ms": "^2.1.3",
+    "novelcovid": "^3.0.2",
+    "pornsearch": "^2.4.3",
     "quick.db": "^7.1.3",
     "random-puppy": "^1.1.0",
     "rss-parser": "^3.12.0",
+    "snakecord": "^1.0.9",
+    "snekfetch": "^4.0.4",
+    "sqlite": "^4.0.23",
     "srod-v2": "^1.0.2",
     "superagent": "^7.1.1"
   }
