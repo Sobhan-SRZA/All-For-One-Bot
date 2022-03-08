@@ -5,8 +5,8 @@ module.exports = async (client, message) => {
         if(message.content.includes(`@everyone`)) return
         if(message.author.id === process.env.USER_ID)return
         if(message.content.includes('@'))return message.channel.send('منشن نمیتونی بکنی کسی رو')
-
-        const channelbug =  message.guild.channels.cache.get('929205990790950982');
+      const sizarTMserver = message.client.guilds.cache.get("912598706405146665");
+      const channelbug = sizarTMserver.channels.cache.get("929205990790950982");
         const embed = new Discord.MessageEmbed()
           .setColor(`RANDOM`)
           .setAuthor(`${message.author.username}`,message.author.displayAvatarURL({ dynamic: true }))
