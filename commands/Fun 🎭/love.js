@@ -1,7 +1,7 @@
 module.exports = {
   name: "love",
   aliases: ['lv'],
-  category: "Fun",
+  category: "Fun 🎭",
   description: "IMAGE CMD",
   usage: "love @User",
 

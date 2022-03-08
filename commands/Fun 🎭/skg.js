@@ -3,7 +3,7 @@ const { MessageButton } = require('discord-buttons');
 module.exports = {
     name: 'skg',
     aliases: ['skg'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}skg',
 
 

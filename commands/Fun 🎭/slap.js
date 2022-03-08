@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'slap',
     aliases: ['sp'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}slap',
 
 

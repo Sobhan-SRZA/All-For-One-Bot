@@ -1,7 +1,7 @@
 module.exports = {
     name: 'clear-queue',
     aliases: ['cq'],
-    category: 'Music',
+    category: 'Music 🎶',
     utilisation: '{prefix}clear-queue',
 
     execute(client, message) {

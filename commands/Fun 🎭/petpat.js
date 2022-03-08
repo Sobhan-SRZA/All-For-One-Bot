@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 module.exports = {
     name: 'petpat',
-    aliases: ['pep','petpat'],
-    category: 'Fun',
+    aliases: ['pep','petpat','pet'],
+    category: 'Fun 🎭',
     utilisation: '{prefix}petpat',
   async execute(client, message, args) { 
         const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;

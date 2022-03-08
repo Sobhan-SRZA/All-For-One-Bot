@@ -14,7 +14,7 @@ module.exports = {
     superagent.get('https://nekobot.xyz/api/image')
     .query({ type: 'boobs'})
     .end((err, response) => {
-      message.channel.send(new Discord.MessageAttachment(encodeURI(response.body.message), "sizar-team/pussy.png"));
+      message.channel.send(new Discord.MessageAttachment(encodeURI(response.body.message), "SizarTeam-boob.png"));
     });
   } else {
     message.channel.send(":x: shotor faghat mitoni toie channel haie nsfw az command estefade koni :/") 

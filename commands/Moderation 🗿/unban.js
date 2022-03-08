@@ -2,7 +2,7 @@ module.exports = {
     name: "unban",
     cooldown: 5,
     aliases: ["ubn"],
-    category: 'Moderation',
+    category: 'Moderation 🗿',
     utilisation: '{prefix}unban',
     description: "Unban a member from the server",
     usage: "[name | nickname | mention | ID] <reason> (optional)",

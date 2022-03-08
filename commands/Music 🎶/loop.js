@@ -1,7 +1,7 @@
 module.exports = {
     name: 'loop',
     aliases: ['lp', 'repeat'],
-    category: 'Music',
+    category: 'Music 🎶',
     utilisation: '{prefix}loop',
 
     execute(client, message, args) {

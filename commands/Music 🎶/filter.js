@@ -1,7 +1,7 @@
 module.exports = {
     name: 'filter',
     aliases: [],
-    category: 'Music',
+    category: 'Music 🎶',
     utilisation: '{prefix}filter [filter name]',
 
     execute(client, message, args) {

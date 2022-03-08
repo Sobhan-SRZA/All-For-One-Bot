@@ -1,7 +1,7 @@
 module.exports = {
     name: 'wanted',
     aliases: ['wad'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}wanted',
   async execute(client, message, args) { 
 const Discord = require('discord.js');
@@ -18,7 +18,7 @@ const Canvas = require('canvas')
     const bg = await Canvas.loadImage("https://cdn.discordapp.com/attachments/919864051444645938/937001660776058950/IMG_3524.jpg")
     ctx.drawImage(bg, 0, 0, canvas.width, canvas.height)
 
-    const TargetAvatar = await Canvas.loadImage(target.displayAvatarURL( {  format: "png", dynamic: true } ))
+    const TargetAvatar = await Canvas.loadImage(`https://some-random-api.ml/canvas/color?avatar=${target.displayAvatarURL( {  format: "png", dynamic: true } )}&color=%23b536yi`)
     ctx.drawImage(TargetAvatar, 140, 370, 550, 550)
 
         const attachment = new Discord.MessageAttachment(canvas.toBuffer(), 'wanted.png')

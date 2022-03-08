@@ -4,10 +4,11 @@ module.exports = {
     name: 'emojify',
     description: 'text to emoji converter',
     aliases: ['ef'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}ef',
 
     execute(client, message, args) {
+       //       message.channel.startTyping();
         if(!args.length) return message.reply('Please specify a text to convert <:no:901355181831254047>')
         const specialCodes = {
             '0': ':zero:',
@@ -35,6 +36,8 @@ module.exports = {
             return letter;
         }).join('');
 
-        message.channel.send(text)
+     return   message.channel.send(text)/*.then(embedMessage => { 
+    message.channel.stopTyping();
+   }) */
     }
 }

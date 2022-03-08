@@ -1,7 +1,7 @@
 module.exports = {
     name: 'debug',
     aliases: [],
-    category: 'Infos',
+    category: 'Infos 📊',
     utilisation: '{prefix}debug',
 
     execute(client, message) {

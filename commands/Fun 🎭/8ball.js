@@ -2,9 +2,10 @@ const Discord = require('discord.js');
 module.exports = {
     name: '8ball',
     aliases: ['8b','ball'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}8ball',
   async execute(client, message, args) { 
+  //      message.channel.startTyping();
       const replies = ["آره", "نه.", "اصلا", "حتما"];
       const  answer = Math.floor((Math.random() * replies.length));
       const question = args;
@@ -23,6 +24,8 @@ const choice = args[0];
   if (!choice){
  message.channel.send("عزیزم برای استفاده از کامند باید سوال بپرسی ازم")
 } else
-message.channel.send(Embed)
+return message.channel.send(Embed)/*.then(embedMessage => { 
+    message.channel.stopTyping(); 
+   }) */
   }
 }

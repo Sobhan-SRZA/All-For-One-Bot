@@ -1,7 +1,7 @@
 module.exports = {
     name: 'queue',
     aliases: [],
-    category: 'Music',
+    category: 'Music 🎶',
     utilisation: '{prefix}queue',
 
     execute(client, message) {

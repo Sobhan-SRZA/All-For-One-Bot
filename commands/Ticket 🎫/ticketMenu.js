@@ -1,14 +1,14 @@
-const Discord = require("discord.js");
-const db = require("quick.db");
-const btn = require("discord-buttons");
-const { MessageMenu , MessageMenuOption , MessageButton } = require("discord-buttons");
 module.exports = {
     name: 'ticketmenu',
     aliases: ['tm'],
-    category: 'Ticket',
+    category: 'Ticket 🎫',
     utilisation: '{prefix}ticketmenu',
 
   async execute(client, message, args) { 
+const db = require("quick.db");
+const btn = require("discord-buttons");
+const { MessageMenu , MessageMenuOption , MessageButton } = require("discord-buttons");
+
    let option1 = new MessageMenuOption()
     .setLabel("Status")
     .setValue("Status")
@@ -130,7 +130,7 @@ function menuselection(menu) {
           menu.reply.send(pingEmbed, true)
     break;
     case "Invite":
-          menu.reply.send({ embed:inviteEmbed , component: row }, true)
+          menu.reply.send(inviteEmbed ,{ components: row }, true)
     break;
 /** 
  *  

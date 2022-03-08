@@ -3,7 +3,7 @@ module.exports = {
     name: "setprefix",
     cooldown: 5,
     aliases: ["set-prefix","stp"],
-    category: 'Moderation',
+    category: 'Moderation 🗿',
     utilisation: '{prefix}setprefix',
     description: "Change bot prefix in server",
     usage: "[setprefix <new-prefix>]",

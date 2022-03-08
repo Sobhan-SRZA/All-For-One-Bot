@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'report',
     aliases: ['bug','rp'],
-    category: 'Info',
+    category: 'Help 🆘',
     utilisation: '{prefix}report',
      description: 'for report bot bugs to developers :)',
 

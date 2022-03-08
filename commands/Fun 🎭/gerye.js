@@ -3,7 +3,7 @@ const { MessageEmbed, MessageAttachment } = require("discord.js");
 module.exports = {
   name: "cry",
   aliases: [],
-  category: "Memer",
+  category: "Fun 🎭",
   description: "IMAGE CMD",
   usage: "cry [ Text ]",
 

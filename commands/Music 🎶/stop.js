@@ -1,7 +1,7 @@
 module.exports = {
     name: 'stop',
     aliases: ['dc'],
-    category: 'Music',
+    category: 'Music 🎶',
     utilisation: '{prefix}stop',
 
     execute(client, message) {

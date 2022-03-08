@@ -3,7 +3,7 @@ const moment = require("moment");
 module.exports = {
     name: 'about',
     aliases: ['info'],
-    category: 'Info',
+    category: 'Infos 📊',
     utilisation: '{prefix}about',
 
 

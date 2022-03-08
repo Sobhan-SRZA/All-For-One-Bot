@@ -2,7 +2,7 @@ module.exports = {
     name: "lock",
     cooldown: 5,
     aliases: ["lo"],
-    category: 'Moderation',
+    category: 'Moderation 🗿',
     utilisation: '{prefix}lock',
     description: "Lock a member from the server",
     usage: "[name | nickname | mention | ID] <reason> (optional)",

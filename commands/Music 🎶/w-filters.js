@@ -1,7 +1,7 @@
 module.exports = {
     name: 'w-filters',
     aliases: ['filters'],
-    category: 'Music',
+    category: 'Music 🎶',
     utilisation: '{prefix}w-filters',
 
     execute(client, message) {

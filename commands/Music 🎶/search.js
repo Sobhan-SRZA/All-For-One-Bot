@@ -1,7 +1,7 @@
 module.exports = {
     name: 'search',
     aliases: ['sr'],
-    category: 'Music',
+    category: 'Music 🎶',
     utilisation: '{prefix}search [name/URL]',
 
     execute(client, message, args) {

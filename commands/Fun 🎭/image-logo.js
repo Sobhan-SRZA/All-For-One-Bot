@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'logo',
     aliases: ['image','il'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}logo',
   async execute(client, message, args) { 
 const Canvas = require('canvas');

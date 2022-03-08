@@ -2,7 +2,7 @@ module.exports = {
     name: "kick",
     cooldown: 5,
     aliases: ["ki"],
-    category: 'Moderation',
+    category: 'Moderation 🗿',
     utilisation: '{prefix}kick',
     description: "Kicks a member from the server",
     usage: "[name | nickname | mention | ID] <reason> (optional)",

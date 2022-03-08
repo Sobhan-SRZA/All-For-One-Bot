@@ -2,10 +2,12 @@
 
 module.exports = {
   name: "join",
-    aliases: ["j"],
+  aliases: ["j"],
+  category: 'Music 🎶',
   cooldown: 10,
   description: "leave bot from voice",
- async execute(message, client, connection) { 
+async execute(client, message, args) { 
+
   const channel = message.member.voice.channel;
   if (!channel)
     return message.channel.send(
@@ -24,5 +26,6 @@ module.exports = {
     new MessageEmbed()
       .setDescription("**Joined the voice channel **")
       .setColor("RED")
-  )}
+  )
+ }
  };

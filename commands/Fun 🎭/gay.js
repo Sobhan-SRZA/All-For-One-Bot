@@ -1,18 +1,26 @@
-const Discord = require('discord.js');
+ const Discord = require('discord.js');
 module.exports = {
     name: 'gay',
     aliases: ['gay','gy'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}gay',
   async execute(client, message, args) { 
-    const Color = "RANDOM", Random = require("srod-v2");
+  //          message.channel.startTyping();
     const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;
-    const Data = await (Random.Gay({ Image: Member.user.displayAvatarURL({ format: "png" ,size:1024 }), Color: Color }));
+    let Data = new Discord.MessageEmbed()
+      .setImage(`https://some-random-api.ml/canvas/gay?avatar=${Member.user.displayAvatarURL({ format: "png" , size: 4096 })}`)
+      .setColor("RANDOM")
+      .setTitle("Why Are Gay?")
+      .setAuthor(`This Human ${Member.user.tag} Is Gay 🏳️‍🌈`,Member.user.displayAvatarURL())
+      .setFooter(`Requested  By ${message.author.tag} | Created By Mr.SIN RE#1528 `,message.author.displayAvatarURL())
+      .setTimestamp()
 if(client.user.id === Member.id){
   return message.reply('Man Mesle To Asshul Gay Nistam😑 ?!')
 
 }else
-     message.channel.send(Data);
+    return message.channel.send(Data)/*.then(embedMessage => { 
+    message.channel.stopTyping(); 
+   }) */
   }
 }
 

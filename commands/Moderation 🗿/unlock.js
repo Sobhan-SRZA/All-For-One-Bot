@@ -2,7 +2,7 @@ module.exports = {
     name: "unlock",
     cooldown: 5,
     aliases: ["ulo"],
-    category: 'Moderation',
+    category: 'Moderation 🗿',
     utilisation: '{prefix}unlock',
     description: "Unlock a member from the server",
     usage: "[name | nickname | mention | ID] <reason> (optional)",

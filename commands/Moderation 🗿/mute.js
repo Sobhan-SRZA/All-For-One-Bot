@@ -5,7 +5,7 @@ module.exports = {
     name: "mute",
     cooldown: 5,
     aliases: ["mu"],
-    category: 'Moderation',
+    category: 'Moderation 🗿',
     utilisation: '{prefix}mute',
     description: "Mutes a member in the discord!",
     usage: "[name | nickname | mention | ID] <reason> (optional)",
@@ -31,7 +31,7 @@ module.exports = {
 
             let muterole;
             let dbmute = await db.fetch(`muterole_${message.guild.id}`);
-            let muteerole = message.guild.roles.cache.find(r => r.name === "muted")
+            let muteerole = message.guild.roles.cache.find(r => r.name === "Muted")
 
             if (!message.guild.roles.cache.has(dbmute)) {
                 muterole = muteerole
@@ -43,7 +43,7 @@ module.exports = {
                 try {
                     muterole = await message.guild.roles.create({
                         data: {
-                            name: "muted",
+                            name: "Muted",
                             color: "#514f48",
                             permissions: []
                         }

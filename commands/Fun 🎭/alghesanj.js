@@ -2,11 +2,12 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'alaghesanj',
     aliases: ['ls'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}alaghesanj',
 
 
   async execute(client, message, args) { 
+           // message.channel.startTyping();
       const Member = message.mentions.members.first() || message.guild.members.cache.get(args[0]) || message.member;    
       const alpha = Math.floor(Math.random() * 100) + 1 ;
             if (Number(alpha) > 1) sanjesh = "(1/10) ▰▱▱▱▱▱▱▱▱▱";
@@ -27,7 +28,9 @@ module.exports = {
              .setTimestamp()
              .setColor('RANDOM')   
              .addField(` میزان علاقه  **${Member.user.username}** به *${message.author.username}* <a:qer:914468879546347541>است <a:hehe:914470000092414012> **${alpha}%** `,`[${sanjesh}](${"https://discord.gg/5GYNec4urW"})`)   
-message.channel.send(LoveEmbed)
+return message.channel.send(LoveEmbed)/*.then(embedMessage => { 
+    message.channel.stopTyping(); 
+   }) */
 
 
         }

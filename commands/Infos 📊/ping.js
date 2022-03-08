@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: 'ping',
     aliases: [],
-    category: 'Infos',
+    category: 'Infos 📊',
     utilisation: '{prefix}ping',
     execute(client, message) {
             var states = "🟢 Excellent";

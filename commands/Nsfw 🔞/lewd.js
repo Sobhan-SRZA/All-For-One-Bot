@@ -9,7 +9,7 @@ const superagent = require('superagent')
 
   if (message.channel.nsfw === true) {
     superagent.get('https://nekobot.xyz/api/image')
-    .query({ type: 'gay'})
+    .query({ type: 'lewdneko'})
     .end((err, response) => {
         const embed = new Discord.MessageEmbed()
               .setImage(response.body.message)

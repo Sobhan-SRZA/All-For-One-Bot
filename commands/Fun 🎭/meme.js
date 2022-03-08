@@ -3,7 +3,7 @@ const Discord = require('discord.js')
 module.exports = {
     name: 'meme',
     aliases: ['mm'],
-    category: 'Fun',
+    category: 'Fun 🎭',
     utilisation: '{prefix}meme',
 
 

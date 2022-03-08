@@ -3,7 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: 'membercount',
     aliases: ['mc','mcout'],
-    category: 'Moderation',
+    category: 'Moderation 🗿',
     utilisation: '{prefix}membercount',
   async execute(client, message, args) { 
     
@@ -13,25 +13,25 @@ const embed = new Discord.MessageEmbed()
           dynamic: true
         }), "https://clan.milrato.eu")
         .setColor(`RANDOM`)
-        .addField("❱ Total USERS", "😀 \`" + message.guild.memberCount + "\`", true)
-        .addField("❱ Total HUMANS", "👤 \`" + message.guild.members.cache.filter(member => !member.user.bot).size + "\`", true)
-        .addField("❱ Total BOTS", "🤖 \`" + message.guild.members.cache.filter(member => member.user.bot).size + "\`", true)
+        .addField("❱ All Members", "🫂 \`" + message.guild.memberCount + "\`", true)
+        .addField("❱ Guild Humans", "👤 \`" + message.guild.members.cache.filter(member => !member.user.bot).size + "\`", true)
+        .addField("❱ Guild Bots", "🤖 \`" + message.guild.members.cache.filter(member => member.user.bot).size + "\`", true)
 
-        .addField("❱ OFFLINE", "⚫️ \`" + message.guild.members.cache.filter(member => member.presence.status != "offline").size + "\`", true)
-        .addField("❱ ONLINE", "🟢 \`" + message.guild.members.cache.filter(member => !member.user.bot || member.presence.status != "offline").size + "\`", true)
-        .addField("❱ ONLINE", "🟢 \`" + message.guild.members.cache.filter(member => member.user.bot || member.presence.status != "offline").size + "\`", true)
+        .addField("❱ Guild ONLINE Count ", "🟢 \`" + message.guild.members.cache.filter(member => member.presence.status != "offline").size + "\`", true)
+        .addField("❱ Guild ONLINE Members", "🟢 \`" + message.guild.members.cache.filter(member => !member.user.bot && member.presence.status != "offline").size + "\`", true)
+        .addField("❱ Guild ONLINE Bots", "🟢 \`" + message.guild.members.cache.filter(member => member.user.bot && member.presence.status != "offline").size + "\`", true)
 
-        .addField("❱ IDLE", "🟠 \`" + message.guild.members.cache.filter(member => member.presence.status == "idle").size + "\`", true)
-        .addField("❱ IDLE", "🟠 \`" + message.guild.members.cache.filter(member => !member.user.bot || member.presence.status == "idle").size + "\`", true)
-        .addField("❱ IDLE", "🟠 \`" + message.guild.members.cache.filter(member => member.user.bot || member.presence.status == "idle").size + "\`", true)
+        .addField("❱ Guild IDLE Count", "🟠 \`" + message.guild.members.cache.filter(member => member.presence.status == "idle").size + "\`", true)
+        .addField("❱ Guild IDLE Members", "🟠 \`" + message.guild.members.cache.filter(member => !member.user.bot && member.presence.status == "idle").size + "\`", true)
+        .addField("❱ Guild IDLE Bots", "🟠 \`" + message.guild.members.cache.filter(member => member.user.bot && member.presence.status == "idle").size + "\`", true)
 
-        .addField("❱ DND", "🔴 \`" + message.guild.members.cache.filter(member => member.presence.status == "dnd").size + "\`", true)
-        .addField("❱ DND", "🔴 \`" + message.guild.members.cache.filter(member => !member.user.bot || member.presence.status == "dnd").size + "\`", true)
-        .addField("❱ DND", "🔴 \`" + message.guild.members.cache.filter(member => member.user.bot || member.presence.status == "dnd").size + "\`", true)
+        .addField("❱ Guild DND Count", "🔴 \`" + message.guild.members.cache.filter(member => member.presence.status == "dnd").size + "\`", true)
+        .addField("❱ Guild DND Members", "🔴 \`" + message.guild.members.cache.filter(member => !member.user.bot && member.presence.status == "dnd").size + "\`", true)
+        .addField("❱ Guild DND Bots", "🔴 \`" + message.guild.members.cache.filter(member => member.user.bot && member.presence.status == "dnd").size + "\`", true)
 
-        .addField("❱ OFFLINE", "⚫\`" + message.guild.members.cache.filter(member => member.presence.status == "offline").size + "\`", true)
-        .addField("❱ OFFLINE", "⚫\`" + message.guild.members.cache.filter(member => !member.user.bot || member.presence.status == "offline").size + "\`", true)
-        .addField("❱ OFFLINE", "⚫\`" + message.guild.members.cache.filter(member => member.user.bot || member.presence.status == "offline").size + "\`", true)
+        .addField("❱ Guild OFFLINE Count", "⚫\`" + message.guild.members.cache.filter(member => member.presence.status == "offline").size + "\`", true)
+        .addField("❱ Guild OFFLINE Members", "⚫\`" + message.guild.members.cache.filter(member => !member.user.bot && member.presence.status == "offline").size + "\`", true)
+        .addField("❱ Guild OFFLINE Bots", "⚫\`" + message.guild.members.cache.filter(member => member.user.bot && member.presence.status == "offline").size + "\`", true)
         .setFooter(`Request By ${message.author.tag} |`, message.author.displayAvatarURL())
          .setTimestamp(Date.now())
       message.channel.send(embed);

@@ -1,7 +1,7 @@
 module.exports = {
     name: 'volume',
     aliases: [],
-    category: 'Music',
+    category: 'Music 🎶',
     utilisation: '{prefix}volume [1-100]',
 
     execute(client, message, args) {

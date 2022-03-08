@@ -5,9 +5,8 @@ const disbut = require("discord-buttons");
 module.exports = {
     name: 'ticket',
     aliases: ['t'],
-    category: 'Ticket',
+    category: 'Ticket 🎫',
     utilisation: '{prefix}ticket',
-
 
   async execute(client, message, args) { 
 let args1 = args[0];
@@ -84,40 +83,7 @@ message.channel.send(ticketCreateEmbed, { components: row}).then((msg) => {
 Bareie Baz Kardan Ticket Roie **"🔒"** Click Konid`)
                 .setColor('RANDOM') 
    channel.send(`Ticket Tavasote ${message.author} Baz Shod🙃`,{ embed: ticketChannelEmbed , component: row }).catch(() => { return });
-/*if (x.id === "configTicket"){
-      let btnClose = new disbut.MessageButton()
-                .setStyle("grey")
-                .setEmoji("🔒")
-                .setLabel("Bastan Ticket")
-                .setID("btnClose");
-    let btnDelete = new disbut.MessageButton()
-                .setStyle("grey")
-                .setEmoji("🗑")
-                .setLabel("Pak Kardan Ticket")
-                .setID("btnDelete");
-    let row = new disbut.MessageActionRow()
-                .addComponents(btnDelete,btnClose)
-    let ticketbtnCloseEmbed = new Discord.MessageEmbed()
-                .setDescription('Roie **"🗑"** Feshar Dahid Ta Ticket Pak Shavad Va Baraie Bstan Ticket Roie **"🔒"** Click Konid')
-                .setColor('RANDOM')   
-    x.message.send(ticketbtnCloseEmbed ,{ component: row }, null).then((msg) => {
-  const filter1 = (button1) => button1.clicker.user.id === message.author.id;
-  let collect1 = msg.createButtonCollector(filter1, { time: 500000 });
-  collect1.on('collect', async(x) => {
-    x.reply.defer()
-    if(x.id === "btnClose") {
-      x.message.edit('Pak Kardan Channel Bade **3 Saniye**').then(() => {
-        setTimeout(() => {
-        db.delete(`ticketName_${message.author.id}_${message.guild.id}`);
-        db.delete(`ticketID_${message.author.id}_${message.guild.id}`);
-          x.message.channel.delete().catch(() => { return });
 
-        }, 3000)
-      })
-    }
-     })
-    })
-}*/
     let yesEmbed = new Discord.MessageEmbed()
      .setColor("RANDOM")
      .setTitle(`Ticket Shoma Sakhte Shod`)
