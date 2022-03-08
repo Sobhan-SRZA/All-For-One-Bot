@@ -6,7 +6,6 @@ module.exports = {
     utilisation: '{prefix}report',
      description: 'for report bot bugs to developers :)',
 
-//  callback: async (message, args, client) => {
   async execute(client, message, args) { 
         const choice = args[0];
         if (!choice){
@@ -14,9 +13,7 @@ module.exports = {
 }else
           message.reply('درخواست باگ یا نظر شما به سرور پشتیبانی ارسال شد یا ادمین ها جوین سرور میشوند و حل میکنند یا به شما در خواست فرندی میدهند با تشکر')
   
-      const sizarTMserver = message.client.guilds.cache.get("912598706405146665");
-      const channelbug = sizarTMserver.channels.cache.get("929205990790950982");
-//      const channelbug = ['929205990790950982'];
+      const channelbug =  message.guild.channels.cache.get("929205990790950982");
         let invite = await message.channel.createInvite({
             maxAge: 10 * 60 * 1000, 
             maxUses: 5
