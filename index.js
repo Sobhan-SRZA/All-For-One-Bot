@@ -13,10 +13,9 @@ const Discord = require('discord.js');
 const client = new Discord.Client({ disableMentions: 'everyone' });  
 require('discord-buttons')(client);
 const { Player } = require('discord-player');
-const sezar = require('./config/bot')
-const prefix = sezar.discord.prefix
 client.player = new Player(client);
 client.config = require('./config/bot');
+const prefix = client.config.discord.prefix;
 client.emotes = client.config.emojis;
 client.filters = client.config.filters;
 client.commands = new Discord.Collection();
@@ -35,7 +34,7 @@ fs.readdirSync('./commands').forEach(dirs => {
 });
 
 //===========================================================================================================//
-//======== Loading Events =========
+//======== Events =========
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 const player = fs.readdirSync('./player').filter(file => file.endsWith('.js'));
 for (const file of events) {
@@ -110,6 +109,44 @@ if (message.content === `${prefix}prefix`) {
     }
 })
 
-      
+/*
+//===========================================================================================================//
+//======== Giveaway Manage ========
+const { GiveawaysManager } = require("discord-giveaways");
+client.giveawaysManager = new GiveawaysManager(client, {
+  storage: "./giveaways.json",
+  updateCountdownEvery: 5000,
+  default: {
+    botsCanWin: false,
+    embedColor: "#5D40F2",
+    reaction: "🎉",
+  },
+});
 
+client.giveawaysManager.on(
+  "giveawayReactionAdded",
+  (giveaway, member, reaction) => {
+    console.log(
+      `${member.user.tag} entered giveaway #${giveaway.messageID} (${reaction.emoji.name})`
+    );
+  }
+);
 
+client.giveawaysManager.on(
+  "giveawayReactionRemoved",
+  (giveaway, member, reaction) => {
+    console.log(
+      `${member.user.tag} unreact to giveaway #${giveaway.messageID} (${reaction.emoji.name})`
+    );
+  }
+);
+
+client.giveawaysManager.on("giveawayEnded", (giveaway, winners) => {
+  console.log(
+    `Giveaway #${giveaway.messageID} ended! Winners: ${winners
+      .map((member) => member.user.username)
+      .join(", ")}`
+  );
+});
+
+*/

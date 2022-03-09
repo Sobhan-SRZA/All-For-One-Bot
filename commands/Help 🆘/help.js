@@ -68,7 +68,7 @@ function buttons() {
   const btn1 = new MessageButton()
   .setStyle('url')
   .setLabel('Invite Me')
-  .setEmoji('✏️')
+  .setEmoji('🤖')
   .setURL(client.config.discord.invite)
 
   const btn2 = new MessageButton()

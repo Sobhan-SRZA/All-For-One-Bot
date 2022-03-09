@@ -5,13 +5,13 @@ module.exports = {
     category: 'Help 🆘',
     utilisation: '{prefix}report',
      description: 'for report bot bugs to developers :)',
-
   async execute(client, message, args) { 
         const choice = args.slice().join(" ");
         if (!choice){
  return message.channel.send("لطفا متن گزارشتان را رو به روی کامند بنویسید تا بررسی شود")
 }else
           message.reply('درخواست باگ یا نظر شما به سرور پشتیبانی ارسال شد یا ادمین ها جوین سرور میشوند و حل میکنند یا به شما در خواست فرندی میدهند با تشکر')
+  
       const sizarTMserver = message.client.guilds.cache.get("912598706405146665");
       const channelbug = sizarTMserver.channels.cache.get("929205990790950982");
         let invite = await message.channel.createInvite({
