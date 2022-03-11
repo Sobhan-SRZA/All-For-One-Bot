@@ -36,13 +36,12 @@ For the bot to be able to start, please complete the file with your credentials 
 - For emojis
 
 ```js
-
-    emojis: {
+emojis: {
         off: '❌',
-        error: '⚠',
+        error: '⚠️',
         queue: '📊',
         music: '🎶',
-        success: '✔',
+        success: '✔️',
         report: '📞',
     },
 
