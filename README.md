@@ -1,5 +1,20 @@
+# Language: FA😼
+## 📡آدرس های من در اینترنت
+[توییچ](https://www.twitch.tv/sobhan_srza) آدرس
+ 
+آدرس چنل [تلگرام](https://t.me/SobhanSRZA)
 
+آدرس [اینستگرام](https://www.instagram.com/srza._.gamer) 
+ 
+آدرس [آپارات](https://www.aparat.com/Sobhan.SRZA)
 
+[یوتوب](https://b2n.ir/srza.-.gamer) address
+
+[Discord](https://discord.gg/bNpqrdXNNn)address
+
+[YouTube](https://b2n.ir/srza._.action) address
+
+# Language: EN🏈
 ## My addresses in cyberspace 👇🏼🙃📡
 
 
@@ -37,14 +52,13 @@ For the bot to be able to start, please complete the file with your credentials 
 
 ```js
 emojis: {
-        off: '❌',
-        error: '⚠️',
-        queue: '📊',
-        music: '🎶',
-        success: '✔️',
-        report: '📞',
-    },
-
+    off: '❌',
+    error: '⚠',
+    queue: '📊',
+    music: '🎶',
+    success: '✔',
+    report: '📞',
+}
 ```
 
 - For configuration
@@ -80,30 +94,38 @@ All you have to do is turn on your bot !
 ## 🎵 Music commands
 
 ```
-play <name/URL>, play music in a voice channel.
-search <name>, open a panel to choose a music and then play it.
-pause, pause the current music.
-resume, puts the current music back on.
-queue, see the next songs.
-clear-queue, remove music in the queue.
-shuffle, to mix the queue.
-nowplaying, see music in progress.
-loop, to enable or disable the repeat function.
-volume <1 - 100>, change the volume.
-skip, skip to next music.
-stop, stop all music.
-filter <filter>, add / remove filter.
-w-filters, see filters.
+play <name/URL> => play music in a voice channel.
+search <name> => open a panel to choose a music and then play it.
+pause => pause the current music.
+resume => puts the current music back on.
+queue => see the next songs.
+clear-queue => remove music in the queue.
+shuffle => to mix the queue.
+nowplaying => see music in progress.
+loop => to enable or disable the repeat function.
+volume <1 - 100> => change the volume.
+skip => skip to next music.
+stop => stop all music.
+filter <filter> => add / remove filter.
+w-filters => see filters.
 ```
 
-## 💡 General commands
+## 🧰 Help commands
 
 ```
-ping, see the bot latency.
-help, see the list of available commands.
-debug, see number of voice connections.
+help => see the list of available commands.
+report => sent a report message of bot bugs to support.
+
 ```
 
+## 💡 Information commands
+```
+uptime => see a time of bot online in discord.
+invite => sent a bot invite link.
+about => see some information about bot.
+debug => see number of voice connections.
+ping => see the bot latency.
+```
 ## 🏓 Utilities (to change the code)
 
 Find all the functions available on the official code [right here](https://github.com/Sobhan-SRZA/Moderation-Bot).
