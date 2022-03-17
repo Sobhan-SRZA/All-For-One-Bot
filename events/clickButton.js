@@ -1,77 +1,21 @@
 const { MessageButton, MessageActionRow } = require('discord-buttons');
+const db = require('quick.db');
 const { MessageEmbed } = require('discord.js');
+const Discord = require('discord.js');
 
 module.exports = async function(client, button) {
-        try {
-            await button.reply.defer();
-            if (button.id == 'yes') {
-const deleted = new MessageEmbed()
-.setTitle('Channel Deleted')
-.setDescription ('Successfully deleted the channel')
-.setColor('RED')
-.setTimestamp()
-const disabledRow = new MessageActionRow()
-.addComponents(
-new MessageButton()
-.setID('yep')
-.setStyle('red')
-.setLabel('Yes')
-.setDisabled(true)
-)
-.addComponents(
-new MessageButton()
-.setID('nope')
-.setStyle('green')
-.setLabel('No')
-.setDisabled(true)
-)
-
-await button.message.edit(deleted,{components: [disabledRow]})
-              
-        }else 
-            if (button.id == 'no') {
-const safe = new MessageEmbed()
-.setTitle('Channel is safe')
-.setDescription('Ok, so u chose no, now I will not delete this channel :)')
-.setColor('GREEN')
-.setTimestamp()
-const disabledRow = new MessageActionRow()
-.addComponents(
-new MessageButton()
-.setID('yep')
-.setStyle('red')
-.setLabel('Yes')
-.setDisabled(true)
-)
-.addComponents(
-new MessageButton()
-.setID('nope')
-.setStyle('green')
-.setLabel('No')
-.setDisabled(true)
-)
-
-await button.message.edit(safe,{components: [disabledRow]})
-
-            }else
-            if (button.id == 'createTicket') {
-                var nameer = `ticket-${button.clicker.user.username}`
-                var checkTickets = button.guild.channels.cache.find(c => c.name == nameer.split(' ').join('-').toLocaleLowerCase());
-                if (checkTickets) {
-                    button.channel.send({
-                        embed: {
-                            color: 0xFF0000,
-                            title: `**❌ | Error**`,
-                            description: `Haji Aval Ye Ticket Besaz Badesh Maro Servis Kon😕`
-                        }
-                    }).then(async function(m) {
-                        setTimeout(() => {
-                            m.delete();
-                        }, 1000 * 20);
-                    });
-                    return
-                }
-                button.guild.channels.create(`ticket-${button.clicker.user.username}`, {
+    try {
+function epoch (date) {
+  return Date.parse(date)
+}
+const dateToday =  new Date(); 
+const TimeStampDate = epoch(dateToday) / 1000;
+let logsChannel = button.guild.channels.cache.find(c => c.id === db.get(`modlog_${button.guild.id}`));
+const prefix = await require("quick.db").fetch(`prefix_${button.guild.id}`)||process.env.PREFIX;
+    if (button.id == 'createTicket') {
+let ticketName = db.get(`ticketName_${button.clicker.user.id}_${button.guild.id}`);
+      if (!button.guild.channels.cache.find(x => x.name === ticketName)) {
+                button.guild.channels.create(`ticket-${button.clicker.user.tag}`, {
                     permissionOverwrites: [{
                             id: button.clicker.user.id,
                             allow: ["SEND_MESSAGES", "VIEW_CHANNEL"]
@@ -84,12 +28,36 @@ await button.message.edit(safe,{components: [disabledRow]})
                             deny: ["VIEW_CHANNEL"]
                         }
                     ],
-                    type: 'text'
+                    type: 'text',
+                    reason: `In User Ticket Baz Kard`,
+                    topic: `**ID:** ${button.clicker.user.id} || **Tag:** ${button.clicker.user.tag} | ${prefix}close`
+
                 }).then(async function(channel) {
+    db.set(`ticketName_${button.clicker.user.id}_${button.guild.id}`, channel.name);
+
+  let userTicket = new Discord.MessageEmbed()
+        .setAuthor(`✔ | Ticket Sakhte Shod`)
+        .setTimestamp()
+        .setColor('#2F3136')
+        .setFooter("Created By Mr.SIN RE#1528 :)", `https://cdn.discordapp.com/attachments/902034619791196221/905054458793312327/2GU.gif`)
+        .setDescription(`Yek Fard Ticket Baz Kard Va Motazere Pasokhgoii Staff Hast`)
+        .addField(`Etelat`, `**Ticket :** ${channel}\n**Dar Tarikhe :** <t:${TimeStampDate}:R>`);
+
+        button.reply.send(userTicket,true)
+          
+        let createdEmbed = new Discord.MessageEmbed()
+        .setAuthor(`📝 | Yek Ticket Sakhte Shod`)
+        .setTimestamp()
+        .setColor('#2F3136')
+        .setFooter("Created By Mr.SIN RE#1528 :)", `https://cdn.discordapp.com/attachments/902034619791196221/905054458793312327/2GU.gif`)
+        .setDescription(`Yek Fard Ticket Baz Kard Va Motazere Pasokhgoii Staff Hast`)
+        .addField(`Etelat`, `**Tavasote :** \`${button.clicker.user.tag}\`\n**ID :** \`${button.clicker.user.id}\`\n**Ticket :** ${channel}\n**Dar Tarikhe :** <t:${TimeStampDate}:R>`);
+           if(logsChannel) logsChannel.send(createdEmbed);
+
                     require('quick.db').set(`TicketControl_${channel.id}`, button.clicker.user.id);
                     let btn = new MessageButton()
                         .setStyle("grey")
-                        .setLabel("Bastan Ticket")
+                        .setLabel("Gofle Ticket")
                         .setEmoji("🔒")
                         .setID("configTicket");
     
@@ -97,13 +65,20 @@ await button.message.edit(safe,{components: [disabledRow]})
                         .addComponent(btn);
                     channel.send(`<@${button.clicker.user.id}>`, {
                         embed: {
-                            description: `Lotfan Montazer **Staff** Bashid Ta Be Shoma Pashokh Bedahand!!
-Bareie Bastan Ticket Roie **"🔒"** Click Konid`,
+                            description: `Lotfan Montazer **Staff** Bashid Ta Be Shoma Pasokh Bedahand!!\nBareie Gofl Ticket Roie **"🔒"** Click Konid`,
                             color:'RANDOM'
                         },
                         component: row
-                    });
+                    })
                 });
+            }else{
+          let TicketError = new MessageEmbed()
+            .setColor("0xFF0000")
+            .setDescription(`Shoma Az Ghabl Yek Ticket Sakhtid ⛔`)
+            .setTitle(`**❌ | Error**`)
+        return button.reply.send(TicketError,true)
+            }
+            
             } else if (button.id == 'configTicket') {
                 if (!button.channel.name.includes("ticket-")) {
                     return;
@@ -122,16 +97,21 @@ Bareie Bastan Ticket Roie **"🔒"** Click Konid`,
                         deny: ["VIEW_CHANNEL"]
                     }
                 ]);
+        let bastanEmbed = new Discord.MessageEmbed()
+        .setAuthor(`🔒| Dar Khast Baste Shodan Ticket`)
+        .setColor('#2F3136')
+        .setDescription(`Tickete User ${button.clicker.user.tag} Gofl Shode`)
+        .setTimestamp()
+        .setFooter("Created By Mr.SIN RE#1528 :)", `https://cdn.discordapp.com/attachments/902034619791196221/905054458793312327/2GU.gif`)
+        .addField(`Etelat`, `**Tavasote :** \`${button.clicker.user.tag}\`\n**ID :** \`${button.clicker.user.id}\`\n**Ticket :** ${button.channel}\n**Dar Tarikhe :** <t:${TimeStampDate}:R>`);
+
+        if(logsChannel) logsChannel.send(bastanEmbed);
                 button.channel.send({
                     embed: {
                         description: `Ticket Tavasote <@!${button.clicker.user.id}> Baste Shod🙃`,
                         color: 'RANDOM'
                     }
-                }).then(async function(m) {
-                    setTimeout(() => {
-                        m.delete();
-                    }, 1000 * 10);
-                });
+                })
                 let btn = new MessageButton()
                     .setStyle("grey")
                     .setEmoji("🔓")
@@ -148,35 +128,49 @@ Bareie Bastan Ticket Roie **"🔒"** Click Konid`,
                 button.channel.send({
                     embed: {
                         description: 'Roie **"⛔"** Feshar Dahid Ta Ticket Pak Shavad Va Baraie Baz Kardan Ticket Roie **"🔓"** Click Konid',
-                        color: 'RANDOM'
+                        color: 'RED'
                     },
                     component: row
-                }).then(async function(m) {
-                    setTimeout(() => {
-                        m.delete();
-                    }, 1000 * 25);
-                });
+                })
             } else if (button.id == "deleteTicket") {
                 require('quick.db').delete(`TicketControl_${button.channel.id}`);
                 button.channel.send({
                     embed: {
-                        description: 'Ticket Ro Bade Chand Sanie Mipakam Sabr Kon😁',
+                        description: `${button.clicker.user}Ticket Ro Bade` + " `5` " + `Sanie Mipakam Sabr Kon😁`,
                         color: 'RANDOM'
                     }
                 });
+        let deletedEmbed = new Discord.MessageEmbed()
+        .setAuthor(`🗑️| Dar Khast Delete Shodan Ticket`)
+        .setColor('#2F3136')
+        .setDescription(`User Ticket Khod Ra Baraye Delete Shodan Taiid Kard Va Delete Shod`)
+        .setTimestamp()
+        .setFooter("Created By Mr.SIN RE#1528 :)", `https://cdn.discordapp.com/attachments/902034619791196221/905054458793312327/2GU.gif`)
+        .addField(`Etelat`, `**Tavasote :** \`${button.clicker.user.tag}\`\n**ID :** \`${button.clicker.user.id}\`\n**Ticket :** 
+\`${button.channel.name}\`\n**Dar Tarikhe :** <t:${TimeStampDate}:R>`);
+
+        if(logsChannel) logsChannel.send(deletedEmbed);
+
                 setTimeout(() => {
                     button.channel.delete();
                 }, 1000 * 5);
+        db.delete(`ticketName_${button.clicker.user.id}_${button.guild.id}`);
+
             } else if (button.id == "reopenTicket") {
+        let bazEmbed = new Discord.MessageEmbed()
+        .setAuthor(`🔓| Ticket Baz Shod`)
+        .setColor('#2F3136')
+        .setDescription(`Tickete User ${button.clicker.user.tag} Baz Shode`)
+        .setTimestamp()
+        .setFooter("Created By Mr.SIN RE#1528 :)", `https://cdn.discordapp.com/attachments/902034619791196221/905054458793312327/2GU.gif`)
+        .addField(`Etelat`, `**Tavasote :** \`${button.clicker.user.tag}\`\n**ID :** \`${button.clicker.user.id}\`\n**Ticket :** ${button.channel}\n**Dar Tarikhe :** <t:${TimeStampDate}:R>`);
+
+        if(logsChannel) logsChannel.send(bazEmbed);
                 button.channel.send({
                     embed: {
                         description: `Ticket Tavasote <@!${button.clicker.user.id}> Baz Shod🙃`,
                         color: 'RANDOM'
                     }
-                }).then(async function(m) {
-                    setTimeout(() => {
-                        m.delete();
-                    }, 1000 * 15);
                 })
                 var member = require('quick.db').fetch(`TicketControl_${button.channel.id}`);
                 button.channel.overwritePermissions([{
@@ -191,7 +185,8 @@ Bareie Bastan Ticket Roie **"🔒"** Click Konid`,
                         deny: ["VIEW_CHANNEL"]
                     }
                 ]);
-            }/*else if (button.id == 'renameTicketFalse') {
+            }/*
+else if (button.id == 'renameTicketFalse') {
                 var msg = require('quick.db').fetch(`DeleteRenameMessage_${button.channel.id}`);
                 button.channel.messages.fetch(msg).then(message => message.delete()).catch(err => { return });
                 require('quick.db').delete(`DeleteRenameMessage_${button.channel.id}`);
@@ -210,5 +205,5 @@ Bareie Bastan Ticket Roie **"🔒"** Click Konid`,
             }*/
     } catch (err) {
         console.log(err)
-    }
+    }  
 }

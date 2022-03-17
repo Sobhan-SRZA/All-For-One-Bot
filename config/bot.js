@@ -1,11 +1,13 @@
 module.exports = {
     emojis: {
-        off: '❌',
-        error: '⚠',
-        queue: '📊',
-        music: '🎶',
+        off:     '❌',
+        error:   '⚠',
+        queue:   '📊',
+        music:   '🎶',
         success: '✔',
-        report: '📞',
+        report:  '📞',
+        setup:   '📝',
+        maske:   '🎭',
     },
 
     discord: {
