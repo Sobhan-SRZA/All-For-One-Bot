@@ -53,6 +53,7 @@ const db = require('quick.db')
 			if (emoji.name == "❌"){ 
          collector.stop()
          msg.edit(`بازی شما به اتمام رسید`)
+         msg.reactions.removeAll()
            return;
       }
 			await aki.step(emojis.indexOf(emoji.name));

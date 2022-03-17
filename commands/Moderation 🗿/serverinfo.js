@@ -33,7 +33,11 @@ var afkChannelID = "**nadarid :)**";
 }else{
 var afkChannelID = `<#${message.guild.afkChannelID}>`;
 }
-
+function epoch (date) {
+  return Date.parse(date)
+}
+const dateToday = message.guild.createdAt; 
+const ServerCreatedAt = epoch(dateToday) / 1000;
 let embed = new Discord.MessageEmbed()
     .setTimestamp()
     .setTitle("**Server Information**")
@@ -41,7 +45,7 @@ let embed = new Discord.MessageEmbed()
     .setThumbnail(message.guild.iconURL({ dynamic: true }))
     .addField(`🎫 Name of Server:`, `<:reply_desgine:950701730675445790>**${message.guild.name}**`, true)
     .addField(`🆔 ID of Server:`, `<:reply_desgine:950701730675445790>**${message.guild.id}**`, true)
-    .addField(`📅 Created at:`, `<:reply_desgine:950701730675445790>${message.guild.joinedAt}`, true)
+    .addField(`📅 Created at:`, `<:reply_desgine:950701730675445790>**<t:${ServerCreatedAt}:R>**`, true)
     .addField(`👑 Owner of Server:`,`<:reply_desgine:950701730675445790>${message.guild.owner}`, true)  
     .addField(`🗺 Region of Server:`, `<:reply_desgine:950701730675445790>${message.guild.region}`, true)
     .addField(`👥 Member total:`, `<:reply_desgine:950701730675445790>${message.guild.members.cache.size}`, true)

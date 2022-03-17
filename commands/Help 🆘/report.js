@@ -6,30 +6,71 @@ module.exports = {
     utilisation: '{prefix}report',
      description: 'for report bot bugs to developers :)',
   async execute(client, message, args) { 
-        const choice = args.slice().join(" ");
+const { MessageButton, MessageActionRow } = require('discord-buttons');
+const choice = args.slice().join(" ");
+    try{
         if (!choice){
- return message.channel.send("لطفا متن گزارشتان را رو به روی کامند بنویسید تا بررسی شود")
-}else
-          message.reply('درخواست باگ یا نظر شما به سرور پشتیبانی ارسال شد یا ادمین ها جوین سرور میشوند و حل میکنند یا به شما در خواست فرندی میدهند با تشکر')
-  
+ return message.channel.send("لطفا متن گزارشتان را رو به روی کامند بنویسید تا بررسی شود و یا به سرور پشتیبانی بات سر بزنید و در چت روم مخصوص و یا در تیکت باگه بات را با سازندگان درمیان بگذارید",{ components: [NeedHelpButtons()] })
+}else {
       const sizarTMserver = message.client.guilds.cache.get("912598706405146665");
       const channelbug = sizarTMserver.channels.cache.get("929205990790950982");
         let invite = await message.channel.createInvite({
-            maxAge: 10 * 60 * 1000, 
+            maxAge: 0, 
             maxUses: 5
         }, )
 
-      const soal = new Discord.MessageEmbed()
-        .setAuthor(message.client.user.tag,message.client.user.displayAvatarURL())
-        .setColor('RANDOM')
-            .setTitle(`Report : `)
-            .setDescription(`
-User : ${message.author} \n 
-Send : ${args}\n 
-Server : ${invite}`)
-            .setThumbnail(message.guild.iconURL())
-            .setFooter(`Requested By ${message.author.tag}`,message.author.displayAvatarURL())
+     const soal = new Discord.MessageEmbed()
+      .setAuthor(`${message.author.username}`,message.author.displayAvatarURL({ dynamic: true }))
+      .setTimestamp()
+      .setTitle(`This Guy Have a Report, User ID: "${message.author.id}"`)
+      .setColor('#2F3136')
+      .addField(`> **User :**`,`<:reply_desgine:950701730675445790>${message.author}`,true)
+      .addField(`> **Send :**` ,`<:reply_desgine:950701730675445790>${choice}`,true) 
+      .addField(`> **Server :**`, `<:reply_desgine:950701730675445790>${invite.url}`,true)
+      .setURL(invite.url)
+      .setThumbnail(message.guild.iconURL({ dynamic: true }))
+      .setFooter(`Requested By ${message.author.tag}`,client.user.displayAvatarURL({ dynamic: true }))
+    channelbug.send({ embed: soal }).then((msg)=> {
+      msg.react(client.emotes.report)
+     })
+        message.reply('درخواست باگ یا نظر شما به سرور پشتیبانی ارسال شد یا ادمین ها جوین سرور میشوند و حل میکنند یا به شما در خواست فرندی میدهند با تشکر',{ components: [SuppoerButtons()] })
+     
+    }
 
-        channelbug.send(soal)
+function NeedHelpButtons() {
+  const btn = new MessageButton()
+  .setStyle('url')
+  .setLabel('Support Server!')
+  .setEmoji('🧰')
+  .setURL(`${client.config.discord.server_support||"https://discord.gg/5GYNec4urW"}`)
+
+  const row = new MessageActionRow()
+  .addComponents(btn)
+
+  return row;
+}
+
+function SuppoerButtons() {
+  const btn1 = new MessageButton()
+  .setStyle('url')
+  .setLabel('Invite Me')
+  .setEmoji('🤖')
+  .setURL(client.config.discord.invite)
+
+  const btn2 = new MessageButton()
+  .setStyle('url')
+  .setLabel('Support Server!')
+  .setEmoji('🧰')
+  .setURL(`${client.config.discord.server_support||"https://discord.gg/5GYNec4urW"}`)
+
+  const row = new MessageActionRow()
+  .addComponents(btn1, btn2)
+
+  return row;
+}
+       }catch(e) {
+	console.log(e)
+      return message.channel.send(`${client.emotes.error} **| Error, ${e}**`);
+        }
     }
 }

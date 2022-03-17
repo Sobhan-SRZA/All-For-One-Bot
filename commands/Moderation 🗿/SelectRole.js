@@ -127,7 +127,11 @@ module.exports = {
                             color: "#ff0000",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 
             }
 
@@ -148,7 +152,11 @@ module.exports = {
                             color: "#ff91af",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
             }
 
 
@@ -167,7 +175,11 @@ module.exports = {
                             color: "#ffb6c1",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 } 
 
             let DarkScarlet;
@@ -185,7 +197,11 @@ module.exports = {
                             color: "#560319",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 } 
 
 
@@ -205,7 +221,11 @@ module.exports = {
                             color: "#ff1493",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 } 
 
 
@@ -224,7 +244,11 @@ module.exports = {
                             color: "#c04c77",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 } 
 
            let CrimsonGlory;
@@ -242,7 +266,11 @@ module.exports = {
                             color: "#be0032",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 } 
 
            let Ruby;
@@ -260,7 +288,11 @@ module.exports = {
                             color: "#e0115f",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 } 
 
            let DeepCerise;
@@ -278,7 +310,11 @@ module.exports = {
                             color: "#da3287",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 } 
 
            let Magenta;
@@ -296,7 +332,11 @@ module.exports = {
                             color: "#ff00ff",
                             permissions: []
                         }
-                    })
+                    }).then(role => {
+    const HighestRole = message.guild.me.roles.highest; // Your bot's highest role in the Guid.
+
+role.setPosition(HighestRole.position - 1)
+                  })
                 } 
 
 

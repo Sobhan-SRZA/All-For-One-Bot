@@ -22,6 +22,7 @@ client.commands = new Discord.Collection();
 client.login(client.config.discord.token);
 
 
+
 //===========================================================================================================//
 //======== Loading Commands =========
 fs.readdirSync('./commands').forEach(dirs => {

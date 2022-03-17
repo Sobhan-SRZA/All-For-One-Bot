@@ -35,7 +35,7 @@ const db = require("quick.db")
                 client.guilds.cache.get(message.guild.id).channels.cache.get(channel.id).send("**Modlog Channel Set!**")
                 db.set(`modlog_${message.guild.id}`, channel.id)
 
-                message.channel.send(`**Modlog Channel Has Been Set Successfully in \`${channel.name}\`!**`)
+                message.channel.send(`**${client.emotes.success}|Modlog Channel Has Been Set Successfully in \`${channel.name}\`!**`)
             }
         } catch {
             return message.channel.send("**Error - `Missing Permissions Or Channel Is Not A Text Channel!`**");

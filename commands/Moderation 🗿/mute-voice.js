@@ -22,7 +22,7 @@ module.exports = {
        if (!muteUser){
         return message.channel.send("Member Morede Nazar Payda Nashod😕");
        }else
-      if (muteUser.voice.serverMute) {
+      if (muteUser.voice.setMute(false)) {
       muteUser.voice.setMute(true);
   
       muteUser.user.send(

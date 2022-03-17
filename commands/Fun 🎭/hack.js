@@ -6,7 +6,9 @@ module.exports = {
   usage: "hack @User",
 
   async execute(client, message, args) { 
-   //       message.channel.startTyping();
+       message.channel.startTyping();
+        const taggedUser = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
+    try{
         if (!args[0]){
           return message.channel.send("⚠️ | Yekio Mention Konid Ta Babasho Darbiaram <a:pishi_pofila:939919927278702723>")
         }else
@@ -17,13 +19,22 @@ module.exports = {
               end = new Date().getTime();
            }
          }
-        const taggedUser = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        const moment = require('moment');
         if (taggedUser.bot) {
             return message.channel.send('⛔️ | Faghat Mitavanid Ensan Haro Mention Konid Ta Man Hackesh Konam <a:pepe_hacker:939919832936239114>')
-        }
+        }else
         message.channel.send(`<a:pepe_hacker:939919832936239114> | Hacking  ${taggedUser} ...`)
 const Discord = require("discord.js")
+
+function epoch (date) {
+  return Date.parse(date)
+}
+const createdAt = taggedUser.createdAt; 
+const createdAtDate = epoch(createdAt) / 1000;
+function epochJoin (date) {
+  return Date.parse(date)
+}
+const joinedAt = taggedUser.joinedAt; 
+const joinedAtDate = epochJoin(joinedAt) / 1000;
 
    let dmEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
@@ -34,10 +45,10 @@ const Discord = require("discord.js")
 
 📁| ID Taraf: **${taggedUser.user.id}**
 📁| Tag E Taraf: **${taggedUser.user.tag}** 
-📁| Tarikhe Sakhte Account: ** ${moment(taggedUser.createdAt).toLocaleString()}** 
-📁| Tarikhe Join Shodan Be Server: ** ${moment(taggedUser.joinedAt).toLocaleString()}** 
-📁| Balatarin Role Taraf To Server: ** ${taggedUser.roles.highest}** 
-📁| Range Rolesh To Server: ** ${taggedUser.roles.color || '`Bi Rang`'}**
+📁| Tarikhe Sakhte Account: **<t:${createdAtDate}:R>** 
+📁| Tarikhe Join Shodan Be Server: **<t:${joinedAtDate}:R>** 
+📁| Balatarin Role Taraf To Server: ** <@&${taggedUser.roles.highest.id}>** 
+📁| Range Rolesh To Server: ** ${taggedUser.displayHexColor || '`Bi Rang`'}**
 📁| Status E Taraf: **${taggedUser.presence.status}**`)
     .setImage(taggedUser.user.displayAvatarURL( { size:4096 , dynamic: true } ))
 
@@ -462,11 +473,13 @@ let hEmbed = new Discord.MessageEmbed()
             msg.edit(vxxEmbed);
             wait(60);
             msg.edit(`Ishon ${taggedUser}.\n**Betor Kamel Hack Shod Va Alan Etealatesh Ro To Dm Behet Miferestam 🧑🏻‍🚀**`).then(() => {
-  return message.author.send(dmEmbed)/*.then(embedMessage => { 
-    message.channel.stopTyping(); 
-   }) */
+  return message.author.send(dmEmbed)
+ 
             });
             
-        })
+        }).then(message.channel.stopTyping())
+                }catch(e) {
+			console.log(e)
+		      }
   }
 }
