@@ -203,7 +203,25 @@ else if (button.id == 'renameTicketFalse') {
             })
             require('quick.db').delete(`DeleteRenameMessage_${button.channel.id}`);
             }*/
-    } catch (err) {
-        console.log(err)
-    }  
-}
+        }catch(e) {
+            function NeedHelpButtons() {
+                const btn1 = new MessageButton()
+                .setStyle('url')
+                .setLabel('Invite Me')
+                .setEmoji('🤖')
+                .setURL(client.config.discord.invite)
+              
+                const btn2 = new MessageButton()
+                .setStyle('url')
+                .setLabel('Support Server!')
+                .setEmoji('🧰')
+                .setURL(`${client.config.discord.server_support||"https://discord.gg/5GYNec4urW"}`)         
+                const row = new MessageActionRow()
+                .addComponents(btn1, btn2)
+              
+                return row;
+              }              
+            console.log(e)
+              return button.reply.send(`${client.emotes.error} **| Error, ${e}**`,true).then(button.clicker.user.send(`Salam aziz👋🏻\n agar man iradi dashtam mitoni to dm moshkelam ro begi ta sazandeganam checkesh bokonannd😉\n vaya be server support biayid:\n ${client.config.discord.server_support||"https://discord.gg/5GYNec4urW"}`,{ components: [NeedHelpButtons()] }));
+                }
+    }
