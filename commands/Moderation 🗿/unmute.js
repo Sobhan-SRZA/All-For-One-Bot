@@ -39,7 +39,7 @@ module.exports = {
 
             if (!mutee.roles.cache.has(muterole.id)) return message.channel.send("**User Is Already UnMuted!**")
 
-            db.set(`muteeid_${message.guild.id}_${mutee.id}`, userRoles)
+            db.delete(`muteeid_${message.guild.id}_${mutee.id}`, userRoles)
           try {
             mutee.roles.remove([muterole.id]).then(() => {
                 mutee.send(`**Hello, You Have Been UnMuted In ${message.guild.name} `).catch(() => null)
@@ -55,9 +55,6 @@ module.exports = {
                 message.channel.send(sembed2);
                 }
             
-            let channel = db.fetch(`modlog_${message.guild.id}`)
-            if (!channel) return;
-
             let embed = new MessageEmbed()
                 .setColor("RED")
                 .setThumbnail(mutee.user.displayAvatarURL({ dynamic: true }))
@@ -69,9 +66,11 @@ module.exports = {
                 .setFooter(message.member.displayName, message.author.displayAvatarURL())
                 .setTimestamp()
 
-            var sChannel = message.guild.channels.cache.get(channel)
-            if (!sChannel) return;
-            sChannel.send(embed)
+                let logChannel = db.fetch(`modlog_${message.guild.id}`)
+                let logsChannel = message.guild.channels.cache.get(logChannel)
+                if(!logsChannel) return;
+                logsChannel.send(embed)
+                
         } catch {
             return;
         }

@@ -3,9 +3,8 @@ module.exports = {
     cooldown: 5,
     aliases: ["bn"],
     category: 'Moderation 🗿',
-    utilisation: '{prefix}ban',
-    description: "Ban a member from the server",
-    usage: "[name | nickname | mention | ID] <reason> (optional)",
+    utilisation: '{prefix}ban [name | nickname | mention | ID] [reason]',
+    description: "Ban a member from the server.",
   async execute(client, message, args) { 
 const Discord = require('discord.js');
 const db = require('quick.db')

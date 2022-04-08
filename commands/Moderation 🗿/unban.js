@@ -31,10 +31,10 @@ const db = require('quick.db')
                 .addField("**Unbanned By**", `**${message.author.username}**`)
                 .setTimestamp();
 
-			let mChannel = require('quick.db').fetch(`modlog_${message.guild.id}`)
-				if(!mChannel) return message.channel.send(e)
-				let banChannel = message.guild.channels.cache.get(mChannel)
-				if(banChannel) return banChannel.send(e)
+                let logChannel = db.fetch(`modlog_${message.guild.id}`)
+                let logsChannel = message.guild.channels.cache.get(logChannel)
+                if(!logsChannel) return;
+                logsChannel.send(embed)
 
 message.channel.send(e)
 

@@ -6,12 +6,16 @@ module.exports = {
     cooldown: 5,
     aliases: ["mu"],
     category: 'Moderation 🗿',
-    utilisation: '{prefix}mute',
-    description: "Mutes a member in the discord!",
-    usage: "[name | nickname | mention | ID] <reason> (optional)",
+    utilisation: '{prefix}mute [name | nickname | mention | ID] [reason]',
+    description: "Mutes a member in server!",
   async execute(client, message, args) { 
 
         try {
+            function epoch (date) {
+                return Date.parse(date)
+              }
+              const dateToday =  new Date(); 
+              const TimeStampDate = epoch(dateToday) / 1000;
             if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send("**You Dont Have Permmissions To Mute Someone! - [MANAGE_GUILD]**");
 
             if (!message.guild.me.hasPermission("MANAGE_GUILD")) return message.channel.send("**I Don't Have Permissions To Mute Someone! - [MANAGE_GUILD]**")
@@ -85,9 +89,6 @@ module.exports = {
                 message.channel.send(sembed2);
                 }
             
-            let channel = db.fetch(`modlog_${message.guild.id}`)
-            if (!channel) return;
-
             let embed = new MessageEmbed()
                 .setColor("RED")
                 .setThumbnail(mutee.user.displayAvatarURL({ dynamic: true }))
@@ -96,13 +97,15 @@ module.exports = {
                 .addField("**Mutee**", mutee.user.username)
                 .addField("**Moderator**", message.author.username)
                 .addField("**Reason**", `${reason || "**No Reason**"}`)
-                .addField("**Date**", message.createdAt.toLocaleString())
+                .addField(`**Date**`, `<t:${TimeStampDate}:R>`, true)
                 .setFooter(message.member.displayName, message.author.displayAvatarURL())
                 .setTimestamp()
 
-            var sChannel = message.guild.channels.cache.get(channel)
-            if (!sChannel) return;
-            sChannel.send(embed)
+                let logChannel = db.fetch(`modlog_${message.guild.id}`)
+                let logsChannel = message.guild.channels.cache.get(logChannel)
+                if(!logsChannel) return;
+                logsChannel.send(embed)
+
         } catch {
             return;
         }

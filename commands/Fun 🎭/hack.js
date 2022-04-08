@@ -19,22 +19,17 @@ module.exports = {
               end = new Date().getTime();
            }
          }
-        if (taggedUser.bot) {
+        if (taggedUser.user.bot === true) {
             return message.channel.send('⛔️ | Faghat Mitavanid Ensan Haro Mention Konid Ta Man Hackesh Konam <a:pepe_hacker:939919832936239114>')
         }else
         message.channel.send(`<a:pepe_hacker:939919832936239114> | Hacking  ${taggedUser} ...`)
 const Discord = require("discord.js")
 
-function epoch (date) {
+function epoch(date) {
   return Date.parse(date)
 }
-const createdAt = taggedUser.createdAt; 
-const createdAtDate = epoch(createdAt) / 1000;
-function epochJoin (date) {
-  return Date.parse(date)
-}
-const joinedAt = taggedUser.joinedAt; 
-const joinedAtDate = epochJoin(joinedAt) / 1000;
+var createdAtDate = epoch(taggedUser.user.createdAt) / 1000;
+var joinedAtDate = epoch(taggedUser.joinedAt) / 1000;
 
    let dmEmbed = new Discord.MessageEmbed()
     .setColor("RANDOM")
@@ -48,7 +43,7 @@ const joinedAtDate = epochJoin(joinedAt) / 1000;
 📁| Tarikhe Sakhte Account: **<t:${createdAtDate}:R>** 
 📁| Tarikhe Join Shodan Be Server: **<t:${joinedAtDate}:R>** 
 📁| Balatarin Role Taraf To Server: ** <@&${taggedUser.roles.highest.id}>** 
-📁| Range Rolesh To Server: ** ${taggedUser.displayHexColor || '`Bi Rang`'}**
+📁| Range Profile: ** ${taggedUser.displayHexColor || '`Bi Rang`'}**
 📁| Status E Taraf: **${taggedUser.presence.status}**`)
     .setImage(taggedUser.user.displayAvatarURL( { size:4096 , dynamic: true } ))
 
@@ -477,7 +472,8 @@ let hEmbed = new Discord.MessageEmbed()
  
             });
             
-        }).then(message.channel.stopTyping())
+        })
+      message.channel.stopTyping()
                 }catch(e) {
 			console.log(e)
 		      }

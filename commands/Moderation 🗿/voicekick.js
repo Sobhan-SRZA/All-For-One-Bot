@@ -25,6 +25,6 @@ const Discord = require('discord.js');
   
       message.mentions.members.first().voice.kick();
       
-      message.channel.send(`Member Morede Nazar Az Voice Kik Shod ✅`)
+      message.channel.send(`Member Morede Nazar Az Voice Kick Shod ✅`)
     }
 }

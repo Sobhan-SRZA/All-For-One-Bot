@@ -4,7 +4,7 @@ module.exports = {
     aliases: ["slo"],
     category: 'Moderation 🗿',
     utilisation: '{prefix}slowmode',
-    description: "slowmode un from the server chatt",
+    description: "slowmode on from the server text channel.",
     usage: "[name | nickname | mention | ID] <reason> (optional)",
   async execute(client, message, args) { 
 const Discord = require('discord.js');
@@ -35,7 +35,7 @@ const Discord = require('discord.js');
         message.channel.send("Slowmode  Dar Hal Hazer  " + amount + " hours")
         return
         } else {
-            message.channel.send("Slowmode  Dar Hal Hazer  + amount +  hour")
+            message.channel.send("Slowmode  Dar Hal Hazer"  + amount +  "hour")
         return}
     } else {
         message.channel.send("Shoma Faghat Mitavanid  seconds(s), minutes(min) and hours(h) Ra Set Konid")

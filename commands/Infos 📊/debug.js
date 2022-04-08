@@ -1,8 +1,9 @@
 module.exports = {
     name: 'debug',
-    aliases: [],
+    aliases: ['deb'],
     category: 'Infos 📊',
-    utilisation: '{prefix}debug',
+    utilisation: 'debug',
+    description: 'shows bot voice channel.',
 
     execute(client, message) {
         message.channel.send(`${client.emotes.success} - ${client.user.username} connected in **${client.voice.connections.size}** channels !`);

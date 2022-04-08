@@ -35,18 +35,18 @@ const db = require('quick.db')
         const kickembed = new Discord.MessageEmbed()
         .setTitle('User has been kicked')
         .setThumbnail(member.user.displayAvatarURL())
-        .setColor(0x5D40F2)
+        .setColor(client.colors.none)
         .addField('Username', `**${member}**`)
         .addField('Kicked by', `**${message.author}**`)
         .addField('Reason', `**${reason}**`)
         .setFooter('Kick time', client.user.displayAvatarURL())
         .setTimestamp()
+        message.channel.send(kickembed)
 
-        let mChannel = db.fetch(`modlog_${message.guild.id}`)
-		if(!mChannel) return message.channel.send(kickembed)
-		let kickChannel = message.guild.channels.cache.get(mChannel)
-		if(!kickChannel) return;
-		kickChannel.send(kickembed)
+    let logChannel = db.fetch(`modlog_${message.guild.id}`)
+		let logsChannel = message.guild.channels.cache.get(logChannel)
+		if(!logsChannel) return;
+		logsChannel.send(kickembed)
 
 
     }

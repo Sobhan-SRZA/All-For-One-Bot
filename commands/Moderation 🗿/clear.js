@@ -2,7 +2,8 @@ module.exports = {
     name: 'clear',
     aliases: ['cl'],
     category: 'Moderation 🗿',
-    utilisation: '{prefix}clear',
+    utilisation: '{prefix}clear [number]',
+    description: "clear channel and delete some message in channel.",
   async execute(client, message, args) { 
 
 const Discord = require('discord.js');
@@ -30,7 +31,7 @@ const result = new Discord.MessageEmbed()
   .addField("This Count Message Have Been Deleted 👇🏻", number)
   .setColor("RANDOM")
   .setFooter(`Requested By ${message.author.tag} `, message.author.displayAvatarURL({ dynamic: true }))
-                            message.channel.bulkDelete(number)
+                            message.channel.bulkDelete(number||10)
 
 message.channel.send(result).then(
             msg => msg.delete({ timeout: Timeout })
