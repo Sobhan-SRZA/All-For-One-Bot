@@ -1,21 +1,30 @@
 {
-  "name": "Shotor-Farangi",
+  "name": "shotor-farangi",
   "main": "index.js",
   "author": "Mr.SIN RE#1528",
   "version": "5.0.0",
   "description": "this is wonderful moderation. this bot is fun & music bot.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sobhan-SRZA/Moderation-Bot.git"
+  },
   "bugs": {
     "url": "https://discord.gg/rsQGcSfyJs"
   },
   "homepage": "https://github.com/Sobhan-SRZA/Moderation-Bot#readme",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Sobhan-SRZA/Moderation-Bot.git"
-  },
+  "keywords": [
+    "mod bot",
+    "sizar tm",
+    "moderation bot",
+    "discord bot"
+  ],
+  "license": "ISC",
   "dependencies": {
+    "discord.js": "^12.5.3",
     "@discordjs/opus": "^0.3.3",
     "akaneko": "^5.2.2",
     "aki-api": "^6.0.8",
@@ -23,10 +32,8 @@
     "canvas": "^2.9.0",
     "discord-buttons": "^4.0.0",
     "discord-buttons-page-v12": "^1.0.6",
-    "discord-giveaways": "^5.1.1",
+    "discord-giveaways": "^4.2.1",
     "discord-player": "^3.3.2",
-    "discord.js": "^12.5.1",
-    "easy-games-js": "^1.2.1",
     "express": "^4.17.1",
     "ffmpeg-static": "^4.2.7",
     "mathjs": "^10.1.1",
