@@ -23,10 +23,26 @@ client.colors = client.config.colors;
 client.commands = new Discord.Collection();
 client.login(client.config.discord.token);
 const { GiveawaysManager } = require("discord-giveaways");
-const GiveawayManagerWithOwnDatabase = class extends GiveawaysManager {};
+const GiveawayManagerWithOwnDatabase = class extends GiveawaysManager {
+        /*async getAllGiveaways() {
+            return client.giveaways.fetchEverything().array();
+        }
+        async saveGiveaway(messageId, giveawayData) {
+            client.giveaways.set(messageId, giveawayData);
+            return true;
+        }
+        async editGiveaway(messageId, giveawayData) {
+            client.giveaways.set(messageId, giveawayData);
+            return true;
+        }
+        async deleteGiveaway(messageId) {
+            client.giveaways.delete(messageId);
+            return true;
+        }*/
+    };
 const manager = new GiveawayManagerWithOwnDatabase(client, {
         default: {
-            storage: "./giveaways.json",
+            storage: "./database.json",
             botsCanWin: false,
             embedColor: '#FFD700',
             embedColorEnd: '#FF0000',
