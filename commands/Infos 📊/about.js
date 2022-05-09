@@ -86,8 +86,6 @@ let infoEmbed = new MessageEmbed()
       .addField("🧥| Architecture", `<:reply_desgine:950701730675445790>** Bot Architecture Is: \`${os.arch()}\`**`,true)
       .addField("🕹| Platform", `<:reply_desgine:950701730675445790>** Bot Usage Platform Is: \`${os.platform()}\`**`,true)
       .addField("🧰| Commands Count", `<:reply_desgine:950701730675445790>** Bot Commands Count Is: \`${message.client.commands.size + 1}\`**`,true)
-      .addField("🧮| Aliases Count", `<:reply_desgine:950701730675445790>** Bot Aliases Count Is: \`${(message.client.commands.filter(c => c.aliases.size + 1))}\`**`,true)
-      .addField(`📚| Category Count:`, `<:reply_desgine:950701730675445790>** Bot Category Count Is: \`${(message.client.commands.filter(c => c.category.size + 1))}\`**`,true)
       .setTimestamp()
       
             message.channel.send(infoEmbed)
