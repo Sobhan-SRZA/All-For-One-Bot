@@ -6,7 +6,7 @@
  
 My [Telegram](https://t.me/SobhanSRZA) Channel Address
 
-[Instegram](https://www.instagram.com/srza._.gamer) address
+[Instagram](https://www.instagram.com/srza._.gamer) address
  
 Address of the [Aparat](https://www.aparat.com/Sobhan.SRZA)
 
