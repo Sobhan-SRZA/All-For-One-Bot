@@ -1,22 +1,4 @@
-# Language: FA😼
-## 📡آدرس های من در اینترنت
-آدرس [توییچ](https://www.twitch.tv/sobhan_srza)
- 
-آدرس کانال [تلگرام من](https://t.me/SobhanSRZA)
 
-آدرس [اینستگرام](https://www.instagram.com/srza._.gamer)
- 
-آدرس [آپارات](https://www.aparat.com/Sobhan.SRZA)
-
-آدرس [یوتوب](https://b2n.ir/srza.-.gamer)
-
-آدرس [دیسکورد](https://discord.gg/bNpqrdXNNn)
-
-آدرس [یوتوب](https://b2n.ir/srza._.action)
-
-
-
-# Language: EN🏈
 ## My addresses in cyberspace 👇🏼🙃📡
 
 
