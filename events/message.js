@@ -5,8 +5,7 @@ module.exports = async (client, message) => {
         if(message.content.includes(`@everyone`)) return
         if(message.author.id === process.env.USER_ID)return
         if(message.content.includes('@'))return message.channel.send('منشن نمیتونی بکنی کسی رو')
-      const sizarTMserver = message.client.guilds.cache.get("912598706405146665");
-      const channelbug = sizarTMserver.channels.cache.get("929205990790950982");
+      const channelbug = client.channels.cache.get("988020418612961322");
         const embed = new MessageEmbed()
           .setColor(client.colors.none)
           .setAuthor(`${message.author.username}`,message.author.displayAvatarURL({ dynamic: true }))
@@ -39,7 +38,7 @@ module.exports = async (client, message) => {
   }
   const now = Date.now();
   const timestamps = cooldowns.get(client.commands.name);
-  const cooldownAmount = (client.commands.cooldown || 5) * 1000;
+  const cooldownAmount = (client.commands.cooldown || 1) * 1000;
 
   if (timestamps.has(message.author.id)) {
     const expirationTime = timestamps.get(message.author.id) + cooldownAmount;

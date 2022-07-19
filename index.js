@@ -62,7 +62,31 @@ fs.readdirSync('./commands').forEach(dirs => {
         client.commands.set(command.name.toLowerCase(), command);
     };
 });
-
+const clc = require("cli-color")//using this package on your codes is not important 
+    console.log("\n")
+    console.log(clc.red(`Starting AntiCrash`));
+    process.on('unhandledRejection', (reason, promise) => {
+            console.log(clc.redBright('=== [antiCrash] :: [unhandledRejection] :: [start] ==='));
+            console.log(reason);
+            console.log(clc.redBright('=== [antiCrash] :: [unhandledRejection] :: [end] ==='));
+    });
+    process.on('rejectionHandled', (promise) => {
+            console.log(clc.redBright('=== [antiCrash] :: [rejectionHandled] :: [start] ==='));
+            console.log(promise);
+            console.log(clc.redBright('=== [antiCrash] :: [rejectionHandled] :: [end] ==='));
+    })
+    process.on("uncaughtException", (err, origin) => {
+            console.log(clc.redBright('=== [antiCrash] :: [uncaughtException] :: [start] ==='));
+            console.log(err);
+            console.log(clc.redBright('=== [antiCrash] :: [uncaughtException] :: [end] ==='));
+    });
+    process.on('uncaughtExceptionMonitor', (err, origin) => {
+            console.log(clc.redBright('=== [antiCrash] :: [uncaughtExceptionMonitor] :: [start] ==='));
+            console.log(err);
+            console.log(clc.redBright('=== [antiCrash] :: [uncaughtExceptionMonitor] :: [end] ==='));
+    });
+    console.log(clc.greenBright(`AntiCrash Started`));
+    console.log("\n")
 //===========================================================================================================//
 //======== Events =========
 const events = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
@@ -100,16 +124,12 @@ client.on("ready", () => {
 //======== Bot Guild remove =========
 client.on("guildDelete",async guild => {
     const channel = client.channels.cache.get(process.env.CHANNEL_ID);
-    const inviteCH = client.channels.cache.get(guild.rulesChannelID);
-        let invite = await inviteCH.createInvite({
-            maxAge: 0, 
-            maxUses: 5
-        }, )
+
     const embed = new Discord.MessageEmbed()
         .setAuthor(client.user.tag,client.user.displayAvatarURL())
-    .setDescription(` Man Be Servere **${guild.name}** Add Shodam Va Tedad Server Hayi Ke Joinam Be Tedad: \`${client.guilds.cache.size}\` Ast`)
+    .setDescription(` Man Az Servere **${guild.name}** Left Dadam Va Tedad Server Hayi Ke Joinam Be Tedad: \`${client.guilds.cache.size}\` Ast`)
     .addField(`👑| Ownere Server: ` ,` tage owner: \` ${guild.owner.tag}\``,true)
-    .addField(`📬| Invite Server: ` ,` linke invite server:  **${invite}**`,true)
+    .addField(`📬| Invite Server: ` ,` linke invite server:  **Can't create Invite**`,true)
     .addField(`🗿| ID Server: ` ,` id server: \` ${guild.id}\``,true)
     .setColor("#2F3136")
     .setThumbnail(guild.iconURL({ dynamic: true }))
