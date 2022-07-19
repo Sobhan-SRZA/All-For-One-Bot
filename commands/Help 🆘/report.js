@@ -12,8 +12,7 @@ const choice = args.slice().join(" ");
         if (!choice){
  return message.channel.send("لطفا متن گزارشتان را رو به روی کامند بنویسید تا بررسی شود و یا به سرور پشتیبانی بات سر بزنید و در چت روم مخصوص و یا در تیکت باگه بات را با سازندگان درمیان بگذارید",{ components: [NeedHelpButtons()] })
 }else {
-      const sizarTMserver = message.client.guilds.cache.get("912598706405146665");
-      const channelbug = sizarTMserver.channels.cache.get("929205990790950982");
+      const channelbug = client.channels.cache.get("988020418612961322");
         let invite = await message.channel.createInvite({
             maxAge: 0, 
             maxUses: 5
