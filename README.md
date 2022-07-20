@@ -116,6 +116,8 @@ Find all the functions available on the official code [right here](https://githu
 
 This is used with [discord.js](https://www.npmjs.com/package/discord.js) and [discord-player](https://www.npmjs.com/package/discord-player).
 
-
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=Moderation-Bot&theme=dracula)](https://github.com/Sobhan-SRZA/Moderation-Bot/)
-
+<p align="center">
+  <a href="https://github.com/Sobhan-SRZA/Moderation-Bot/" target="_blank"> 
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=Moderation-Bot&theme=react" alt="Readme-Card.png">
+  </a>
+</p>
