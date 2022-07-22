@@ -35,22 +35,25 @@ For the bot to be able to start, please complete the file with your credentials 
 - For emojis
 
 ```js
-emojis: {
-    off: '❌',
-    error: '⚠',
-    queue: '📊',
-    music: '🎶',
-    success: '✔',
-    report: '📞',
-}
+    emojis: {
+        off:     '❌',
+        error:   '⚠',
+        queue:   '📊',
+        music:   '🎶',
+        success: '✔',
+        report:  '📞',
+        setup:   '📝',
+        giveaway:'🎉',
+        maske:   '🎭',
+    },
 ```
 
 - For configuration
 
 ```js
 discord: {
-   token: process.env.TOKEN,
-   prefix: process.env.PREFIX,
+   token: 'Your-Bot-Token',
+   prefix: 'Your-Bot-Prefix',
    invite: `https://discord.com/api/oauth2/authorize?client_id=${process.env.USER_ID}&permissions=1644972474359&scope=bot%20applications.commands`,
    server_support: "Your-Server-Link",
 }
