@@ -14,7 +14,7 @@ module.exports = {
     discord: {
         token: process.env.TOKEN,
         prefix: process.env.PREFIX,
-        invite: `https://discord.com/oauth2/authorize?client_id=${process.env.USER_ID}&permissions=137775017040&scope=bot%20applications.commands`,
+        invite: `https://discord.com/oauth2/authorize?client_id=${process.env.USER_ID}&scope=bot+applications.commands+identify+guilds+applications.commands.permissions.update&response_type=code&permissions=2080374975`,
         server_support: "https://discord.gg/bNpqrdXNNn",
     },
     colors: {
