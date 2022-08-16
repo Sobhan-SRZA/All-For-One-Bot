@@ -8,6 +8,7 @@ app.listen(port, () => console.log(`Your app listening at http://localhost:${por
 
 //===========================================================================================================//
 //======== Consol ========
+require('dotenv').config()
 const fs = require('fs');
 const Discord = require('discord.js');
 const db = require('quick.db');
