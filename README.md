@@ -26,6 +26,8 @@ If you need help with this project, to get support faster you can join the help 
 ## ⚡ Installation
 [![Deploy on Herokucd](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Sobhan-SRZA/Moderation-Bot/)
 
+[![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/Sobhan-SRZA/Moderation-Bot)
+
 [![Use on Replit](https://repl.it/badge/github/Sobhan-SRZA/Moderation-Bot/)](https://repl.it/github/Sobhan-SRZA/Moderation-Bot/)
 
 Well, let's start by downloading the code.
