@@ -3,10 +3,14 @@
     <img align="right" src ="https://cdn.discordapp.com/icons/1054814674979409940/0f4df37209685530a9c8577578ca8e58.png?size=4096" width=25% >
   </a>
 Hi there👋🏻
+
 In this project, we built a discord bot that has all the features of other bots. 
+
 This bot has features such as ticketing system, giveaway system, music system, backup system, social media alert system, moderation system, fun system, economy system, and it also has more features, but it was not mentioned because the text was too long.
+
 To support the project, please promote it and give it a star⭐. 
-this source bot writes with love and somuch works❤️‍🔥, so please give **"star ⭐️"** to this project❤️
+
+this source bot writes with love and somuch works❤️‍🔥, so please give **star ⭐** to this project❤️
 
 <details><summary> Some Images About The Bot📌 </summary>
 soon📪
@@ -42,6 +46,31 @@ module.exports = {
 
 Packages  |  Version  |  Install
 ------------- | ------------- | -------------
+[akaneko](https://www.npmjs.com/package/akaneko) | Lastest ^5.2.2 | `npm install akaneko`
+[aki-api](https://www.npmjs.com/package/aki-api) | Lastest ^6.0.8 | `npm install aki-api`
+[axios](https://www.npmjs.com/package/axios) | Lastest ^0.25.0 | `npm install axios`
+[booru](https://www.npmjs.com/package/booru) | Lastest ^2.5.3 | `npm install booru`
+[canvas](https://www.npmjs.com/package/canvas) | Lastest ^2.9.0 | `npm install canvas`
+[easy-games-js](https://www.npmjs.com/package/easy-games-js) | Lastest ^1.2.1 | `npm install easy-games-js`
+[discord-player](https://www.npmjs.com/package/discord-player) | Lastest ^3.3.2 | `npm install discord-player`
+[discord-giveaways](https://www.npmjs.com/package/discord-giveaways) | Lastest ^4.5.1 | `npm install discord-giveaways`
+[ffmpeg-static](https://www.npmjs.com/package/ffmpeg-static) | Lastest ^4.2.7 | `npm install ffmpeg-static`
+[dateformat](https://www.npmjs.com/package/dateformat) | Lastest ^5.0.3 | `npm install dateformat`
+[got](https://www.npmjs.com/package/got) | Lastest ^12.0.2 | `npm install got`
+[mathjs](https://www.npmjs.com/package/mathjs) | Lastest ^10.1.1 | `npm install mathjs`
+[ms](https://www.npmjs.com/package/ms) | Lastest ^2.1.3 | `npm install ms`
+[nekos.life](https://www.npmjs.com/package/nekos.life) | Lastest ^2.0.9 | `npm install nekos.life`
+[node-fetch](https://www.npmjs.com/package/node-fetch) | Lastest ^2.6.7 | `npm install node-fetch`
+[novelcovid](https://www.npmjs.com/package/novelcovid) | Lastest ^3.0.2 | `npm install novelcovid`
+[pornsearch](https://www.npmjs.com/package/pornsearch) | Lastest ^2.4.3 | `npm install pornsearch`
+[random-puppy](https://www.npmjs.com/package/random-puppy) | Lastest ^1.1.0 | `npm install random-puppy`
+[request-promise-native](https://www.npmjs.com/package/request-promise-native) | Lastest ^1.0.9 | `npm install request-promise-native`
+[rss-parser](https://www.npmjs.com/package/rss-parser) | Lastest ^3.12.0 | `npm install rss-parser`
+[snekfetch](https://www.npmjs.com/package/snekfetch) | Lastest ^4.0.4 | `npm install snekfetch`
+[sqlite](https://www.npmjs.com/package/sqlite) | Lastest ^4.0.23 | `npm install sqlite`
+[srod-v2](https://www.npmjs.com/package/srod-v2) | Lastest ^1.0.2 | `npm install srod-v2`
+[superagent](https://www.npmjs.com/package/superagent) | Lastest ^7.1.1 | `npm install superagent`
+[snakecord](https://www.npmjs.com/package/snakecord) | Lastest ^1.0.9 | `npm install snakecord`
 [quick.db](https://www.npmjs.com/package/quick.db)  | Latest ^7.1.3  | `npm install quick.db`
 [@discordjs/opus](https://www.npmjs.com/package/@discordjs/opus) | Latest ^0.3.3  | `npm install @discordjs/opus`
 [array-move](https://www.npmjs.com/package/array-move) | Lastest ^3.0.1 | `npm install array-move`
@@ -54,11 +83,7 @@ Packages  |  Version  |  Install
 [fs](https://www.npmjs.com/package/fs) | Lastest ^0.0.1-security | `npm install fs`
 [lyrics-finder](https://www.npmjs.com/package/lyrics-finder) | Lastest ^21.4.0 | `npm install lyrics-finder`
 [moment](https://www.npmjs.com/package/moment) | Lastest ^2.29.3 | `npm install moment`
-[simple-youtube-api](https://www.npmjs.com/package/simple-youtube-api) | Lastest ^5.2.1 | `npm install simple-youtube-api`
-[soundcloud-downloader](https://www.npmjs.com/package/soundcloud-downloader) | Lastest ^0.2.1 | `npm install soundcloud-downloader`
-[string-progressbar](https://www.npmjs.com/package/string-progressbar) | Lastest ^1.0.1 | `npm install string-progressbar`
-[ytdl-core](https://www.npmjs.com/package/ytdl-core) | Lastest ^4.11.0 | `npm install ytdl-core`
-[ytdl-core-discord](https://www.npmjs.com/package/ytdl-core-discord) | Lastest ^1.3.1 | `npm install ytdl-core-discord`
+
 
 
 - if the source packages needs updates you can open that file for update there👉🏻 `update.bat`
