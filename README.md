@@ -81,7 +81,6 @@ Packages  |  Version  |  Install
 [discord-buttons](https://www.npmjs.com/package/discord-buttons) | Lastest ^4.0.0-deprecated | `npm install discord-buttons`
 [express](https://www.npmjs.com/package/express) | Lastest ^4.18.1 | `npm install express`
 [fs](https://www.npmjs.com/package/fs) | Lastest ^0.0.1-security | `npm install fs`
-[lyrics-finder](https://www.npmjs.com/package/lyrics-finder) | Lastest ^21.4.0 | `npm install lyrics-finder`
 [moment](https://www.npmjs.com/package/moment) | Lastest ^2.29.3 | `npm install moment`
 
 
