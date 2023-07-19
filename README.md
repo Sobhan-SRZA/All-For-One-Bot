@@ -161,7 +161,7 @@ that was so easy, after you click that buttons👇🏻 you will create some proj
   </a>
 </p>
 <p align="right">
-  <a href="https://discord.gg/WMhke7BW7J" target="_blank"> 
+  <a href="https://discord.gg/P4XxUmebDa" target="_blank"> 
     <img src="https://discord.com/api/guilds/912596015075455016/widget.png?style=banner2" alt="sizar-team.png">
   </a>
 </p>
