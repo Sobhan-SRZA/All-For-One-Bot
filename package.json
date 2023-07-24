@@ -1,54 +1,45 @@
 {
-  "name": "chocolate-boy",
+  "name": "ilona",
   "main": "index.js",
   "author": "Mr.SIN RE#1528 | Persian Caesar",
-  "version": "5.0.0",
-  "description": "this is wonderful moderation. this bot is fun & music bot.",
-  "bugs": {
-    "url": "https://discord.gg/rsQGcSfyJs"
-  },
-  "homepage": "https://github.com/Sobhan-SRZA/Moderation-Bot#readme",
-  "scripts": {
-    "start": "node index.js"
-  },
+  "version": "1.0.0",
+  "description": "This is wonderful ticket bot with perfect handlering and had perfect tools.",
+  "license": "BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sobhan-SRZA/Moderation-Bot.git"
+    "url": "git+https://github.com/Persian-Caesar/Ticker-Boy.git"
+  },
+  "bugs": {
+    "server": "https://dsc.gg/persian-caesar",
+    "url": "https://github.com/Persian-Caesar/Ticker-Boy/issues"
+  },
+  "homepage": "https://github.com/Persian-Caesar/Ticker-Boy#readme",
+  "keywords": [
+    "advanced bot",
+    "ticket bot",
+    "advanced ticket bot",
+    "advanced ticket system",
+    "buttons ticket system",
+    "ticker boy",
+    "persian caesar"
+  ],
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@discordjs/opus": "^0.3.3",
-    "akaneko": "^5.2.2",
-    "aki-api": "^6.0.8",
-    "axios": "^0.25.0",
-    "booru": "^2.5.3",
-    "canvas": "^2.9.0",
+    "@napi-rs/canvas": "^0.1.41",
+    "axios": "^1.3.5",
     "cli-color": "^2.0.2",
     "cpu-stat": "^2.0.1",
-    "dateformat": "^5.0.3",
-    "discord-buttons": "^4.0.0",
-    "discord-buttons-page-v12": "^1.0.6",
-    "discord-giveaways": "^4.5.1",
-    "discord-player": "^3.3.2",
-    "discord.js": "^12.5.1",
-    "easy-games-js": "^1.2.1",
-    "express": "^4.17.1",
-    "ffmpeg-static": "^4.2.7",
-    "got": "^12.0.2",
-    "mathjs": "^10.1.1",
-    "moment": "^2.29.1",
-    "ms": "^2.1.3",
-    "nekos.life": "^2.0.9",
-    "node-fetch": "^2.6.7",
-    "novelcovid": "^3.0.2",
-    "pornsearch": "^2.4.3",
-    "quick.db": "^7.1.3",
-    "random-puppy": "^1.1.0",
-    "request-promise-native": "^1.0.9",
-    "rss-parser": "^3.12.0",
-    "snakecord": "^1.0.9",
-    "snekfetch": "^4.0.4",
-    "sqlite": "^4.0.23",
-    "srod-v2": "^1.0.2",
-    "superagent": "^7.1.1"
+    "discord-html-transcripts": "^3.1.3",
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.4",
+    "mongoose": "^7.1.1",
+    "quick.db": "^9.1.6",
+    "quickmongo": "^5.2.0"
   }
 }

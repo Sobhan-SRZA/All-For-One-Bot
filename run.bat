@@ -2,5 +2,5 @@ echo off
 color 1
 cls
 :a
-npm install
+node index.js
 goto a
