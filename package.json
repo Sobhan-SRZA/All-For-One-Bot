@@ -3,25 +3,33 @@
   "main": "index.js",
   "author": "Mr.SIN RE#1528 | Persian Caesar",
   "version": "1.0.0",
-  "description": "This is wonderful ticket bot with perfect handlering and had perfect tools.",
+  "description": "I'm Ilona, The best Persian robot that you can use me for all thing you need like mod, ticket, giveaway and much things.",
   "license": "BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Persian-Caesar/Ticker-Boy.git"
+    "url": "git+https://github.com/Sobhan-SRZA/All-For-One-Bot.git"
   },
   "bugs": {
     "server": "https://dsc.gg/persian-caesar",
-    "url": "https://github.com/Persian-Caesar/Ticker-Boy/issues"
+    "url": "https://github.com/Sobhan-SRZA/All-For-One-Bot/issues"
   },
-  "homepage": "https://github.com/Persian-Caesar/Ticker-Boy#readme",
+  "homepage": "https://github.com/Sobhan-SRZA/All-For-One-Bot#readme",
   "keywords": [
     "advanced bot",
     "ticket bot",
     "advanced ticket bot",
     "advanced ticket system",
     "buttons ticket system",
-    "ticker boy",
-    "persian caesar"
+    "ilona",
+    "persian caesar",
+    "all for one",
+    "fun bot",
+    "fun",
+    "economy",
+    "dashboard",
+    "discord",
+    "moderation bot",
+    "security bot"
   ],
   "scripts": {
     "start": "node index.js",

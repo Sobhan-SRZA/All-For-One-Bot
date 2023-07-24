@@ -43,22 +43,28 @@ soon📪
 
 for setup your bot, you need put bot secret "Token" in `.env` file and replaced it with `BOT_TOKEN` after that for add bot prefix you need go again in and put your bot `prefix` in `.env` file then replaced it with `BOT_PREFIX` then for working your bot well you have to put bot client id in last file and replaced it with `BOT_CLIENT_ID` 
 ```js
-TOKEN="BOT_TOKEN"
-PREFIX="BOT_PREFIX"
-USER_ID="BOT_CLIENT_ID"
-CHANNEL_ID="BOT_DEBUG_CHANNEL"
+token="PLACE_BOT_TOKEN"
+prefix="PLACE_BOT_PREFIX"
+clientId="USER_CLIENT_ID"
+mongoURL="PLACE_MONGODB_DATABASE_URL"
 ```
 
 if you need so much configuration about the bot you can go in to the `config.js` file and edit some parameters for customizing your bot.
 ```js
 //an example code from "config/bot.js"
 module.exports = {
-    discord: {
-        token: process.env.TOKEN,
-        prefix: process.env.PREFIX,
-        invite: `https://discord.com/oauth2/authorize?client_id=${process.env.USER_ID}&scope=bot+applications.commands+identify+guilds+applications.commands.permissions.update&response_type=code&permissions=2080374975`,
-        server_support: "https://discord.gg/bNpqrdXNNn",
-    },
+  discord: {
+    token: process.env.token,
+    prefix: process.env.prefix,
+    invite: `https://discord.com/oauth2/authorize?client_id=${process.env.clientId}&scope=bot+applications.commands&permissions=8`,
+    server_support: "https://discord.gg/P4XxUmebDa",
+    server_id: "1054814674979409940",
+    server_channel_report: "1054814677806370927",
+    server_channel_status: "1054814677806370928",
+    server_channel_stats: "1128650802236497940",
+    topgg: `https://top.gg/bot/${process.env.clientId}/vote`
+  },
+  //... etc
 }
 
 ```
@@ -67,48 +73,25 @@ module.exports = {
 
 Packages  |  Version  |  Install
 ------------- | ------------- | -------------
-[akaneko](https://www.npmjs.com/package/akaneko) | Lastest ^5.2.2 | `npm install akaneko`
-[aki-api](https://www.npmjs.com/package/aki-api) | Lastest ^6.0.8 | `npm install aki-api`
-[axios](https://www.npmjs.com/package/axios) | Lastest ^0.25.0 | `npm install axios`
-[booru](https://www.npmjs.com/package/booru) | Lastest ^2.5.3 | `npm install booru`
-[canvas](https://www.npmjs.com/package/canvas) | Lastest ^2.9.0 | `npm install canvas`
-[easy-games-js](https://www.npmjs.com/package/easy-games-js) | Lastest ^1.2.1 | `npm install easy-games-js`
-[discord-player](https://www.npmjs.com/package/discord-player) | Lastest ^3.3.2 | `npm install discord-player`
-[discord-giveaways](https://www.npmjs.com/package/discord-giveaways) | Lastest ^4.5.1 | `npm install discord-giveaways`
-[ffmpeg-static](https://www.npmjs.com/package/ffmpeg-static) | Lastest ^4.2.7 | `npm install ffmpeg-static`
-[dateformat](https://www.npmjs.com/package/dateformat) | Lastest ^5.0.3 | `npm install dateformat`
-[got](https://www.npmjs.com/package/got) | Lastest ^12.0.2 | `npm install got`
-[mathjs](https://www.npmjs.com/package/mathjs) | Lastest ^10.1.1 | `npm install mathjs`
-[ms](https://www.npmjs.com/package/ms) | Lastest ^2.1.3 | `npm install ms`
-[nekos.life](https://www.npmjs.com/package/nekos.life) | Lastest ^2.0.9 | `npm install nekos.life`
-[node-fetch](https://www.npmjs.com/package/node-fetch) | Lastest ^2.6.7 | `npm install node-fetch`
-[novelcovid](https://www.npmjs.com/package/novelcovid) | Lastest ^3.0.2 | `npm install novelcovid`
-[pornsearch](https://www.npmjs.com/package/pornsearch) | Lastest ^2.4.3 | `npm install pornsearch`
-[random-puppy](https://www.npmjs.com/package/random-puppy) | Lastest ^1.1.0 | `npm install random-puppy`
-[request-promise-native](https://www.npmjs.com/package/request-promise-native) | Lastest ^1.0.9 | `npm install request-promise-native`
-[rss-parser](https://www.npmjs.com/package/rss-parser) | Lastest ^3.12.0 | `npm install rss-parser`
-[snekfetch](https://www.npmjs.com/package/snekfetch) | Lastest ^4.0.4 | `npm install snekfetch`
-[sqlite](https://www.npmjs.com/package/sqlite) | Lastest ^4.0.23 | `npm install sqlite`
-[srod-v2](https://www.npmjs.com/package/srod-v2) | Lastest ^1.0.2 | `npm install srod-v2`
-[superagent](https://www.npmjs.com/package/superagent) | Lastest ^7.1.1 | `npm install superagent`
-[snakecord](https://www.npmjs.com/package/snakecord) | Lastest ^1.0.9 | `npm install snakecord`
-[quick.db](https://www.npmjs.com/package/quick.db)  | Latest ^7.1.3  | `npm install quick.db`
-[@discordjs/opus](https://www.npmjs.com/package/@discordjs/opus) | Latest ^0.3.3  | `npm install @discordjs/opus`
-[array-move](https://www.npmjs.com/package/array-move) | Lastest ^3.0.1 | `npm install array-move`
+[@napi-rs/canvas](https://www.npmjs.com/package/@napi-rs/canvas) | Lastest ^0.1.41 | `npm install @napi-rs/canvas`
+[mongoose](https://www.npmjs.com/package/mongoose) | Lastest ^7.1.1 | `npm install mongoose`
+[axios](https://www.npmjs.com/package/axios) | Lastest ^1.3.5 | `npm install axios`
+[quickmongo](https://www.npmjs.com/package/quickmongo) | Lastest ^5.2.0 | `npm install quickmongo`
+[discord-html-transcripts](https://www.npmjs.com/package/discord-html-transcripts) | Lastest ^3.1.3 | `npm install discord-html-transcripts`
+[quick.db](https://www.npmjs.com/package/quick.db)  | Latest ^9.1.6  | `npm install quick.db`
 [cli-color](https://www.npmjs.com/package/cli-color) | Lastest ^2.0.2 | `npm install cli-color`
+[discord.js](https://www.npmjs.com/package/discord.js) | Lastest ^14.11.0 | `npm install discord.js`
 [cpu-stat](https://www.npmjs.com/package/cpu-stat) | Lastest ^2.0.1 | `npm install cpu-stat`
-[discord.js](https://www.npmjs.com/package/discord.js) | Lastest ^12.5.1 | `npm install discord.js`
 [dotenv](https://www.npmjs.com/package/dotenv) | Lastest ^16.0.1 | `npm install dotenv`
-[discord-buttons](https://www.npmjs.com/package/discord-buttons) | Lastest ^4.0.0-deprecated | `npm install discord-buttons`
 [express](https://www.npmjs.com/package/express) | Lastest ^4.18.1 | `npm install express`
 [fs](https://www.npmjs.com/package/fs) | Lastest ^0.0.1-security | `npm install fs`
-[moment](https://www.npmjs.com/package/moment) | Lastest ^2.29.3 | `npm install moment`
+[moment](https://www.npmjs.com/package/moment) | Lastest ^2.29.4 | `npm install moment`
 
 
 
 - if the source packages needs updates you can open that file for update there👉🏻 `update.bat`
 
-- if you install packages and want run your source you have to open that👉🏻 `start.bat`
+- if you install packages and want run your source you have to open that👉🏻 `run.bat`
 
 - EZPZ your Music bot are installed and running around 🕺
 
