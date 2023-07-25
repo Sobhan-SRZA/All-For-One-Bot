@@ -18,7 +18,6 @@ const {
 const {
   createTranscript
 } = require('discord-html-transcripts');
-const os = require('node:os');
 module.exports = async (client, interaction) => {
   try {
     if (!interaction.isButton()) return;
@@ -49,12 +48,6 @@ module.exports = async (client, interaction) => {
       await interaction.followUp({
         embeds: [new EmbedBuilder().setTitle(`${client.emotes.premium}| **Premium Info**`).setColor(client.colors.aqua).setDescription(`If you have a VIP role in the [Pc Development](${client.config.discord.server_support}) guild, I must congratulate you. Because with this role you can. Have special bot capabilities.\n\n${client.emotes.down}**What roles?**\n${client.emotes.reply}Have one of vip roles.\n\n${client.emotes.down}**How to have this role?**\n${client.emotes.reply}You just need to open the ticket to purchase the VIP role.\n\n${client.emotes.down}**What features does the VIP role have?**\n${client.emotes.reply}With this roll, you can explain to the bot developer that he will set up the bot for you in a custom and completely unique way.\nWe have other capabilities in mind for the bot, but we have to wait.`)],
         components: [new ActionRowBuilder().addComponents([new ButtonBuilder().setStyle(ButtonStyle.Link).setEmoji(client.emotes.premium).setLabel("Buy Premium").setURL(client.config.discord.server_support)])]
-      })
-    }
-    if (interaction.customId === "reload_info") {
-      await interaction.deferUpdate()
-      await interaction.editReply({
-        embeds: [new EmbedBuilder().setColor(client.colors.theme).setTitle(`Bot Status`).addFields([{ name: `${client.emotes.server}| Total Guilds:`, value: `**\`${client.guilds.cache.size.toLocaleString()}\` Servers**`, inline: false }, { name: `${client.emotes.users}| Total Users:`, value: `**\`${client.guilds.cache.map(guild => guild.memberCount).reduce((a, b) => a + b, 0).toLocaleString()}\` Users**`, inline: false }, { name: `${client.emotes.commands}| Commands:`, value: `**slashCommands[\`${client.slashCommands.size}\`] & messageCommands[\`${client.messageCommands.size}\`]**`, inline: false }, { name: `${client.emotes.ping}| Ping:`, value: `**\`${Math.round(client.ws.ping)} ms 📶 | ${await checkPing(Math.round(client.ws.ping))}\`**`, inline: false }, { name: `${client.emotes.uptime}| Uptime:`, value: `**<t:${Math.trunc(client.readyTimestamp / 1000)}:D> | <t:${Math.trunc(client.readyTimestamp / 1000)}:R>**`, inline: false }, { name: `${client.emotes.memory}| Memory:`, value: `**${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2).toLocaleString()}/${(process.memoryUsage().rss / 1024 / 1024).toFixed(2).toLocaleString()} MB | \`${Math.trunc(process.memoryUsage().heapUsed * 100 / (process.memoryUsage().rss))}%\`**`, inline: false }, { name: `${client.emotes.cpu}| CPU:`, value: `**${os.cpus().map((i) => `${i.model}`)[0]} | \`${String(os.loadavg()[0])}%\`**`, inline: false }, { name: `${client.emotes.version}| Bot Versions:`, value: `**Source \`v${require(`${process.cwd()}/package.json`).version}\` | Discord.js \`v${require(`discord.js`).version}\`**`, inline: false }])]
       })
     }
     if (interaction.customId === "update") {
