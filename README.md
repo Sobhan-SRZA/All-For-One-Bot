@@ -1,4 +1,9 @@
-## ♾ All For One Discord Bot Source
+<div align="center">
+  <img src="https://github.com/Sobhan-SRZA/All-For-One-Bot/assets/90289153/86180967-1d78-4267-8da0-6e01063bf9b6">
+</div>
+
+---
+
 <div align="center">
     <img src="https://badges.aleen42.com/src/node.svg">
     <img src="https://img.shields.io/github/v/release/Sobhan-SRZA/All-For-One-Bot?label=Version">
@@ -18,7 +23,7 @@
     </div>
 </div>
 
----
+## ♾ All For One Discord Bot Source
 
   <a href="https://dsc.gg/persian-caesar">
     <img align="right" src ="https://cdn.discordapp.com/icons/1054814674979409940/0f4df37209685530a9c8577578ca8e58.png?size=4096" width=25% >
