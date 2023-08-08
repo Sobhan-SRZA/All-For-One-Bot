@@ -120,6 +120,15 @@ that was so easy, after you click that buttons👇🏻 you will create some proj
 
 </details>
 
+<details><summary> How install bot on our pc? </summary>
+
+[Run bot on pc](https://github.com/Sobhan-SRZA/All-For-One-Bot/assets/90289153/24ca2e3d-845d-4e4e-8b17-b6e8485b9459)
+
+</details>
+
+
+
+
 ---
 
 # **📫 Contact me in :** &nbsp;
