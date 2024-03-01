@@ -84,6 +84,9 @@ this source bot writes with love and somuch works❤️‍🔥, so please give *
 
 ## How Install
 
+- If you need so much configuration about the bot you can go in to the `config.js` or `example.env` file and edit some parameters for customizing your bot.
+- Alert !! - if you add your values in `example.env` file fastest you can rename it to `.env`. 
+
 Preview of `example.env` file:
 ```shell
 # Discord robot token and message commands prefix section.
@@ -101,9 +104,6 @@ support_server_id=""
 status_channel_id=""
 report_channel_id=""
 ```
-
-If you need so much configuration about the bot you can go in to the `config.js` or `example.env` file and edit some parameters for customizing your bot.
-- Alert !! - if you add your values in `example.env` file fastest you can rename it to `.env`. 
 
 Preview of `config.js` file:
 ```js
@@ -196,7 +196,7 @@ module.exports = {
 }
 ```
 
-- A table to shows you what packages are used in this source code.
+A table to shows you what packages are used in this source code.
 
 | Packages                                                             | Version         | Install                         |
 | -------------------------------------------------------------------- | --------------- | ------------------------------- |
