@@ -65,6 +65,23 @@ this source bot writes with love and somuch works❤️‍🔥, so please give *
 
 ---
 
+## Features
+- **Ticket System 🎫**
+- **Music 🎶 (Actually it's broked because main package doesn't support it.)**
+- **Giveaway System 🎁**
+- **Fun Commands 🎈**
+- **Moderating System ⚙**
+- **VIP Commands 💎 (It's just nitro generating command also it's fake nitro.)**
+- **Logs All Moderaton Staff in Channel 🪵**
+- **Custom Prefix 🧀**
+- **Commands For Only Bot Owners 👑 (Like change bot name or profile avatar thingy.)**
+- **NSFW Commands 🔞 (Using free api)**
+- **Information Commands 📫 (Like role, bot, user and server information.)**
+- **Get Witch User You Want Avatar Image Or Banner Thingy 🍤**
+- **⚠ Alert!! - This source code only works with `discord.js` version `12` so much features maybe doesn't work any more. - Don't worry new version of bot for `discord.js` version `14` as soon will be uploaded.**
+
+---
+
 ## How Install
 
 Preview of `example.env` file:
