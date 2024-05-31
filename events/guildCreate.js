@@ -17,7 +17,7 @@ module.exports = async (client, guild) => {
         .addField(`👥| Total Members:`, `guild members count: \`${guild.members.cache.size}\``, true)
         .addField(`📬| Server Invite: `, ` server invite link:  **${`${invite.url}` || "can't create it :("}**`, true)
         .addField(`🆔| Guild ID:`, `guild Id: **\`${guild.id}\`**`, true)
-        .addField(`📅| Created at:`, `guild created at: **<t:${Date.parse(guild.createdAt) / 1000}:R>**`, true)
+        .addField(`📅| Created at:`, `guild created at: **<t:${guild.createdTimestamp / 1000}:R>**`, true)
         .setColor("#2F3136")
         .setThumbnail(guild.iconURL({ dynamic: true }))
         .setTimestamp(Date.now())
