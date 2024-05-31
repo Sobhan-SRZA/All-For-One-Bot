@@ -16,7 +16,7 @@ module.exports = {
    */
   async execute(client, message, args) {
     const Discord = require('discord.js');
-    if (!message.guild.me.hasPermission(["ADMINISTRATOR"]))
+    if (!message.guild.me.hasPermission("ADMINISTRATOR"))
       return message.channel.send(
         "Man Permission Nadaram 😥😓"
       );
