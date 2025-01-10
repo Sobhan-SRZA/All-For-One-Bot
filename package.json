@@ -1,0 +1,72 @@
+{
+  "name": "chocolate_boy",
+  "main": "index.js",
+  "author": "Mr.SIN RE#1528 (Sobhan-SRZA)",
+  "version": "0.0.1",
+  "description": "this is wonderful moderation bot with fun and another commands. ",
+  "bugs": {
+    "url": "https://discord.gg/rsQGcSfyJs"
+  },
+  "homepage": "https://github.com/Sobhan-SRZA/Moderation-Bot#readme",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sobhan-SRZA/Moderation-Bot.git"
+  },
+  "dependencies": {
+    "akaneko": "^5.2.2",
+    "aki-api": "^6.0.8",
+    "axios": "^0.25.0",
+    "canvacord": "^5.3.0",
+    "canvas": "^2.9.0",
+    "cli-color": "^2.0.2",
+    "cpu-stat": "^2.0.1",
+    "cron": "^2.0.0",
+    "discord-giveaways": "^4.2.1",
+    "discord-player": "^5.2.0",
+    "discord.js": "^13.8.0",
+    "dotenv": "^16.0.0",
+    "easy-games-js": "^1.2.1",
+    "ejs": "^3.1.8",
+    "express": "^4.17.1",
+    "express-session": "^1.17.3",
+    "ffmpeg-static": "^4.2.7",
+    "mathjs": "^10.1.1",
+    "memer-api": "^4.0.1",
+    "memorystore": "^1.6.7",
+    "moment": "^2.29.1",
+    "ms": "^2.1.3",
+    "nekos.life": "^2.0.9",
+    "node-superfetch": "^0.2.3",
+    "novelcovid": "^3.0.2",
+    "passport": "^0.6.0",
+    "passport-discord": "^0.1.4",
+    "pornsearch": "^2.4.3",
+    "quick.db": "^7.1.3",
+    "random-puppy": "^1.1.0",
+    "request": "^2.88.2",
+    "rss-parser": "^3.12.0",
+    "snakecord": "^1.0.9",
+    "snekfetch": "^4.0.4",
+    "sqlite": "^4.0.23",
+    "srod-v2": "^1.0.2",
+    "superagent": "^7.1.1",
+    "yt-search": "^2.10.3",
+    "ytpl": "^2.3.0"
+  },
+  "keywords": [
+    "chocolate",
+    "mod bot",
+    "fun bot",
+    "fun",
+    "ticket",
+    "chocolate-boy",
+    "chocolate boy",
+    "giveaway bot",
+    "welcomer",
+    "advanced bot"
+  ],
+  "license": "LICENSE"
+}
