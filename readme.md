@@ -125,7 +125,7 @@ This is used with [discord.js](https://www.npmjs.com/package/discord.js) and [di
 
 <p align="center">
   <a href="https://github.com/Sobhan-SRZA/Chocolate-Boy/" target="_blank"> 
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=Chocolate-Boy&theme=react" alt="Readme-Card.png">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=All-For-One-Bot&theme=react" alt="Readme-Card.png">
   </a>
 </p>
 
