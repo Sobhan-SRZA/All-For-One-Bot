@@ -1,0 +1,32 @@
+{
+  "emotes": {
+    "Staff": "<:DiscordStaff:1212804052635746406>",
+    "Partner": "<:PartneredServerOwner:1212804218717732875>",
+    "Hypesquad": "<:HypeSquadEvent:1212804162555879424>",
+    "BugHunterLevel1": "<:DiscordBugHunter1:1212804597064794173>",
+    "BugHunterLevel2": "<:DiscordBugHunter2:1212804026471551016>",
+    "HypeSquadOnlineHouse1": "<:HypeSquadBravery:1212804126350643220>",
+    "HypeSquadOnlineHouse2": "<:HypeSquadBrilliance:1212804139411832842>",
+    "HypeSquadOnlineHouse3": "<:HypeSquadBalance:1212804108722114641>",
+    "PremiumEarlySupporter": "<:EarlySupporter:1212804086382989382>",
+    "VerifiedBot": "<:Bot1:1212803972243660850><:Bot2:1212803983740248104>",
+    "VerifiedDeveloper": "<:EarlyVerifiedBotDeveloper:1212804072344658051>",
+    "CertifiedModerator": "<:ModeratorProgramsAlumni:1212804172416552991>",
+    "ActiveDeveloper": "<:ActiveDeveloper:1212803896028954634>"
+  },
+  "names": {
+    "Staff": "Discord Staff",
+    "Partner": "Discord Partner",
+    "BugHunterLevel1": "Bug Hunter (Level 1)",
+    "BugHunterLevel2": "Bug Hunter (Level 2)",
+    "Hypesquad": "HypeSquad Events",
+    "HypeSquadOnlineHouse1": "House of Bravery",
+    "HypeSquadOnlineHouse2": "House of Brilliance",
+    "HypeSquadOnlineHouse3": "House of Balance",
+    "PremiumEarlySupporter": "Early Supporter",
+    "TeamPseudoUser": "Team User",
+    "VerifiedBot": "Verified Bot",
+    "VerifiedDeveloper": "Verified Bot Developer",
+    "ActiveDeveloper": "Active Developer"
+  }
+}
