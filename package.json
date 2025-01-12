@@ -1,0 +1,38 @@
+{
+  "name": "all-for-one-bot",
+  "version": "0.0.4",
+  "author": "Sobhan-SRZA (mr.sinre) & Persian Caesar",
+  "description": "This source is full discord bot and can do anything you want.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build1": "tsup src --format cjs,esm --dts",
+    "build": "tsc --build",
+    "start:build": "npm run build && node .",
+    "start": "npx ts-node src",
+    "dev": "npx nodemon -x ts-node -e ts src"
+  },
+  "bugs": {
+    "url": "https://github.com/Sobhan-SRZA/All-For-One-Bot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sobhan-SRZA/All-For-One-Bot.git"
+  },
+  "homepage": "https://github.com/Sobhan-SRZA/All-For-One-Bot#readme",
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.2.4",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "discord.js": "^14.17.3",
+    "dotenv": "^16.4.7",
+    "quick.db": "^9.1.7",
+    "write-file-atomic": "^6.0.0"
+  }
+}
