@@ -1,0 +1,111 @@
+const {
+  ApplicationCommandType,
+  ApplicationCommandOptionType
+} = require("discord.js");
+const error = require("../../functions/error");
+
+module.exports = {
+  name: "setactivity",
+  description: "تغییر موقت استاتوس بات.",
+  category: "owner",
+  type: ApplicationCommandType.ChatInput,
+  cooldown: 5,
+  user_permissions: ["SendMessages"],
+  bot_permissions: ["SendMessages", "EmbedLinks"],
+  dm_permissions: true,
+  only_owner: true,
+  only_slash: true,
+  only_message: false,
+  options: [{
+    name: "status",
+    type: ApplicationCommandOptionType.String,
+    description: "استاتوس را انتخاب کنید.",
+    choices: [{
+      name: "Do Not Distrub",
+      value: "dnd"
+    }, {
+      name: "Idle",
+      value: "idle"
+    }, {
+      name: "Online",
+      value: "online"
+    }, {
+      name: "Invisible",
+      value: "invisible"
+    }]
+  }, {
+    name: "activity-type",
+    type: ApplicationCommandOptionType.String,
+    description: "نوع فعالیت بات را انتخاب کنید.",
+    choices: [{
+      name: "Competing",
+      value: "Competing"
+    }, {
+      name: "Watching",
+      value: "Watching"
+    }, {
+      name: "Listening",
+      value: "Listening"
+    }, {
+      name: "Streaming",
+      value: "Streaming"
+    }, {
+      name: "Playing",
+      value: "Playing"
+    }]
+  }, {
+    name: "activity-name",
+    type: ApplicationCommandOptionType.String,
+    description: "متن فعالیت را بنویسید."
+  }, {
+    name: "stream-url",
+    type: ApplicationCommandOptionType.String,
+    description: "برای نشان دادن لینک استریم در استاتوس یک لینک وارد کنید."
+  }],
+
+  /**
+   * 
+   * @param {import("discord.js").Client} client 
+   * @param {import("discord.js").CommandInteraction} interaction 
+   * @param {Array<string>} args 
+   * @returns 
+   */
+  run: async (client, interaction, args) => {
+    try {
+      const status = interaction.options.getString("status");
+      const activityName = interaction.options.getString("activity-name");
+      const activityType = interaction.options.getString("activity-type");
+      const url = interaction.options.getString("stream-url");
+      const type = {
+        Playing: 0,
+        Streaming: 1,
+        Listening: 2,
+        Watching: 3,
+        Competing: 5
+      };
+      client.user.setPresence({
+        activities: [{
+          name: activityName ? activityName : "Hello World",
+          type: activityType ? type[activityType] : 4,
+          url: url ? url : null
+        }],
+        status: status
+      });
+      return await interaction.reply({
+        ephemeral: true,
+        content: `✅| استاتوس ربات به صورت موقت تغییر یافت.`
+      })
+    } catch (e) {
+      error(e)
+    }
+  }
+}
+/**
+ * @copyright
+ * Coded by Sobhan-SRZA (mr.sinre) | https://github.com/Sobhan-SRZA
+ * @copyright
+ * Work for Persian Caesar | https://dsc.gg/persian-caesar
+ * @copyright
+ * Please Mention Us "Persian Caesar", When Have Problem With Using This Code!
+ * @copyright
+*/
