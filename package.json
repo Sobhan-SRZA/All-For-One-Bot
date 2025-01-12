@@ -3,10 +3,8 @@
   "version": "0.0.4",
   "author": "Sobhan-SRZA (mr.sinre) & Persian Caesar",
   "description": "This source is full discord bot and can do anything you want.",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "license": "MIT",
+  "main": "index.ts",
+  "license": "BSD-3-Clause",
   "scripts": {
     "build1": "tsup src --format cjs,esm --dts",
     "build": "tsc --build",
