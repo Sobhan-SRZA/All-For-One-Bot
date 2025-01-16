@@ -3,12 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const discord_js_1 = require("discord.js");
 const error_1 = tslib_1.__importDefault(require("../../utils/error"));
-const response_1 = tslib_1.__importDefault(require("../../utils/response"));
 const getAuthor_1 = tslib_1.__importDefault(require("../../utils/getAuthor"));
-const help = {
+const Database_1 = tslib_1.__importDefault(require("../../classes/Database"));
+const HexToNumber_1 = tslib_1.__importDefault(require("../../functions/HexToNumber"));
+const embed_1 = tslib_1.__importDefault(require("../../storage/embed"));
+const setup = {
     data: {
-        name: "help",
-        description: "لیست دستورات بات.",
+        name: "setup",
+        description: "تنظیمات ربات در سرور.",
         type: discord_js_1.ApplicationCommandType.ChatInput,
         default_member_permissions: new discord_js_1.PermissionsBitField([
             discord_js_1.PermissionFlagsBits.SendMessages,
@@ -21,73 +23,65 @@ const help = {
         nsfw: false,
         options: [
             {
-                name: "ephemeral",
-                description: "آیا می‌خواهید این پیام مخفی بماند؟",
-                type: discord_js_1.ApplicationCommandOptionType.String,
-                choices: [
+                name: "bot-channels",
+                description: "چنلی که بات فقط در آنجا کار کند.",
+                type: discord_js_1.ApplicationCommandOptionType.Subcommand,
+                options: [
                     {
-                        name: "بله",
-                        value: "true"
+                        name: "white-list",
+                        description: "چنلی که کامند های بات باید کار کند.",
+                        type: discord_js_1.ApplicationCommandOptionType.Channel,
+                        channel_types: [discord_js_1.ChannelType.GuildText]
                     },
                     {
-                        name: "خیر",
-                        value: "false"
+                        name: "black-list",
+                        description: "چنلی که کامند های بات نباید کار کند.",
+                        type: discord_js_1.ApplicationCommandOptionType.Channel,
+                        channel_types: [discord_js_1.ChannelType.GuildText]
+                    },
+                    {
+                        name: "ephemeral",
+                        description: "آیا می‌خواهید این پیام مخفی بماند؟",
+                        type: discord_js_1.ApplicationCommandOptionType.String,
+                        choices: [
+                            {
+                                name: "بله",
+                                value: "true"
+                            },
+                            {
+                                name: "خیر",
+                                value: "false"
+                            }
+                        ],
+                        required: false
                     }
-                ],
-                required: false
+                ]
             }
         ]
     },
-    category: "member",
-    aliases: ["h", "commands"],
+    category: "admin",
+    aliases: ["set", "st"],
     cooldown: 10,
     only_owner: false,
     only_slash: true,
     only_message: true,
     run: async (client, interaction, args) => {
         try {
-            const user = (0, getAuthor_1.default)(interaction), embed = new discord_js_1.EmbedBuilder()
-                .setAuthor({
-                name: `${client.user.username} Help`
-            })
-                .setFooter({
-                text: `درخواست شده توسط ${user.tag}`,
-                iconURL: user.displayAvatarURL({ forceStatic: true })
-            })
-                .setColor("Blue")
-                .setDescription(`## Admin's Commands List:\n${cmds_info_list_str(client, "admin", client.config.discord.prefix)}\n\n## Member's Commands List:\n${cmds_info_list_str(client, "member", client.config.discord.prefix)}`)
-                .setThumbnail(client.user.displayAvatarURL({ forceStatic: true }));
-            await (0, response_1.default)(interaction, {
-                embeds: [embed]
-            });
-            return;
-            // Functions
-            function cmds_info_list_str(client, category_name, prefix) {
-                let description = "";
-                client.commands
-                    .filter(c => c.category === category_name)
-                    .forEach((cmd) => {
-                    if (cmd.only_slash && cmd.data.options && cmd.data.options.some(op => op.type === 1)) {
-                        const name = [];
-                        if (cmd.data.options && cmd.data.options.some(op => op.type === 1))
-                            cmd.data.options.forEach((option) => {
-                                name.push({ name: cmd.data.name + " " + option.name, description: option.description });
-                            });
-                        else
-                            name.push({ name: cmd.data.name, description: cmd.data.description });
-                        name.forEach(element => {
-                            description += `\n\n**${cmd.only_slash ?
-                                `</${element.name}:${cmd.data.id}>` : ""}${cmd.only_message ?
-                                `${prefix}${element.name} ${cmd.usage ? cmd.usage : ""}` : ""}\nDescription: \`${element.description}\`**`;
-                        });
+            const user = (0, getAuthor_1.default)(interaction), db = new Database_1.default(client.db), Subcommand = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getSubcommand() : args[0];
+            switch (Subcommand) {
+                case "bot-channels": {
+                    const whiteListChannel = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getChannel("white-list") : args[1], blackListChannel = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getChannel("black-list") : args[2], embed = new discord_js_1.EmbedBuilder()
+                        .setAuthor({ name: "Admin Panel | bot-channels" })
+                        .setColor((0, HexToNumber_1.default)(embed_1.default.color.theme));
+                    if (!whiteListChannel && !blackListChannel) {
+                        return;
                     }
-                    else
-                        description += `\n\n**${cmd.only_slash ?
-                            `</${cmd.data.name}:${cmd.data.id}>` : ""}${cmd.only_slash && cmd.only_message ? " | " : ""}${cmd.only_message ?
-                            `${prefix}${cmd.data.name} ${cmd.usage ? cmd.usage : ""}` : ""}${cmd.aliases && cmd.aliases.length > 0 ?
-                            `\nAliases: [${cmd.aliases.map(a => `\`${a}\``).join(", ")}]` : ""}\nDescription: \`${cmd.data.description}\`**`;
-                });
-                return description;
+                    if (whiteListChannel) { }
+                    break;
+                }
+                default: {
+                    break;
+                }
             }
         }
         catch (e) {
@@ -95,7 +89,7 @@ const help = {
         }
     }
 };
-exports.default = help;
+exports.default = setup;
 /**
  * @copyright
  * Coded by Sobhan-SRZA (mr.sinre) | https://github.com/Sobhan-SRZA

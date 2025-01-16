@@ -3,13 +3,12 @@
   "version": "0.0.4",
   "author": "Sobhan-SRZA (mr.sinre) & Persian Caesar",
   "description": "This source is full discord bot and can do anything you want.",
-  "main": "index.ts",
+  "main": "dist/index.js",
   "license": "BSD-3-Clause",
   "scripts": {
-    "build1": "tsup src --format cjs,esm --dts",
-    "build": "tsc --build",
+    "build": "tsc",
     "start:build": "npm run build && node .",
-    "start": "npx ts-node src",
+    "start": "node .",
     "dev": "npx nodemon -x ts-node -e ts src"
   },
   "bugs": {

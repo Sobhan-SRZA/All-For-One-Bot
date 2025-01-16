@@ -48,12 +48,7 @@ exports.default = async (client, interaction) => {
                     }
                 };
                 if (command.data.options && (command.data.options?.find(a => a.name === "ephemeral") || command.data.options?.filter(a => a.type === 1)?.find(a => a.options?.find(b => b.name === "ephemeral"))))
-                    try {
-                        await DeferReply();
-                    }
-                    catch {
-                        await DeferReply();
-                    }
+                    await DeferReply();
                 await db.add("totalCommandsUsed", 1);
                 return await command.run(client, interaction);
             }

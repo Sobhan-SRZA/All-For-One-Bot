@@ -45,31 +45,39 @@ const error_1 = tslib_1.__importDefault(require("./src/utils/error"));
 const post_1 = tslib_1.__importDefault(require("./src/functions/post"));
 const fs_1 = require("fs");
 const client = new Client_1.default(), handle = (0, fs_1.readdirSync)(__dirname + "/src/handlers").filter(file => file.endsWith(".js")), packageJSON = JSON.parse((0, fs_1.readFileSync)("./package.json", "utf8"));
-// Load Handlers 
-let amount = 0;
-(0, post_1.default)("Welcome to ".cyan + (packageJSON.name).blue + "! | Version: ".cyan + (packageJSON.version).blue + "\n" +
-    "Coded By ".cyan + ("Sobhan-SRZA").yellow + " & ".cyan + ("Persian Caesar").yellow + " With ".cyan + ("❤️").red + "\n" +
-    `Discord: ${("Mr.Sinre").blue}` + " | ".cyan + `${("mr.sinre").blue}` + " | ".cyan + `${("https://dsc.gg/persian-caesar").blue}`, "W", "magenta", "cyan");
-(0, post_1.default)("Logging into the BOT...", "S");
-(async () => {
-    for (const file of handle) {
-        const handlerFile = await Promise.resolve(`${`./src/handlers/${file}`}`).then(s => tslib_1.__importStar(require(s)));
-        const handler = handlerFile.default || handlerFile;
-        await handler(client);
-        amount++;
-    }
-    (0, post_1.default)((String(amount)).cyan + " Handler Is Loaded!!".green, "S");
-})();
 // Login 
-if (client.token)
-    client
-        .login(client.token)
-        .catch(e => {
-        (0, post_1.default)("The Bot Token You Entered Into Your Project Is Incorrect Or Your Bot's INTENTS Are OFF!!", "E", "red", "red");
+const main = async () => {
+    try {
+        // Load Handlers 
+        let amount = 0;
+        (0, post_1.default)("Welcome to ".cyan + (packageJSON.name).blue + "! | Version: ".cyan + (packageJSON.version).blue + "\n" +
+            "Coded By ".cyan + ("Sobhan-SRZA").yellow + " & ".cyan + ("Persian Caesar").yellow + " With ".cyan + ("❤️").red + "\n" +
+            `Discord: ${("Mr.Sinre").blue}` + " | ".cyan + `${("mr.sinre").blue}` + " | ".cyan + `${("https://dsc.gg/persian-caesar").blue}`, "W", "magenta", "cyan");
+        (0, post_1.default)("Logging into the BOT...", "S");
+        for (const file of handle) {
+            const handlerFile = await Promise.resolve(`${`./src/handlers/${file}`}`).then(s => tslib_1.__importStar(require(s)));
+            const handler = handlerFile.default || handlerFile;
+            await handler(client);
+            amount++;
+        }
+        (0, post_1.default)((String(amount)).cyan + " Handler Is Loaded!!".green, "S");
+        if (client.token)
+            await client
+                .login(client.token)
+                .catch(e => {
+                (0, post_1.default)("The Bot Token You Entered Into Your Project Is Incorrect Or Your Bot's INTENTS Are OFF!!", "E", "red", "red");
+                (0, error_1.default)(e);
+            });
+        else
+            (0, post_1.default)("Please Write Your Bot Token Opposite The Token In The config.js File In Your Project!!", "E", "red", "red");
+    }
+    catch (e) {
         (0, error_1.default)(e);
-    });
-else
-    (0, post_1.default)("Please Write Your Bot Token Opposite The Token In The config.js File In Your Project!!", "E", "red", "red");
+        await client.destroy();
+        process.exit(1);
+    }
+};
+void main();
 // Load Anti Crash
 if (client.config.source.anti_crash) {
     process.on("unhandledRejection", (e) => (0, error_1.default)(e));

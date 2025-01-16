@@ -2,7 +2,7 @@
     "compilerOptions": {
         "strict": true,
         "outDir": "dist",
-        "module": "commonjs",
+        "module": "CommonJS",
         "target": "es2022",
         "moduleResolution": "node",
         "resolveJsonModule": true,
