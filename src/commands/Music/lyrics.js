@@ -53,8 +53,7 @@ module.exports = {
         ephemeral: true
       });
 
-    const query = interaction.options.getString("query", false) ?? queue?.currentTrack?.title;
-
+    const query = interaction.user ? interaction.options.getString("query") : args.join(" ") ?? queue?.currentTrack?.title;
     if (!query) return interaction.reply("You forgot to provide the track name.");
 
     const queryFormated = query
