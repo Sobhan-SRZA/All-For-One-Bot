@@ -7,7 +7,7 @@ import replaceValues from "../../functions/replaceValues";
 import logger from "../../functions/logger";
 import os from "os";
 import firstUpperCase from "../../functions/firstUpperCase";
-import { ActivityType, REST, Routes } from "discord.js";
+import { ActivityType, REST, Routes, version } from "discord.js";
 
 export default async (client: DiscordClient) => {
   try {
@@ -87,7 +87,7 @@ export default async (client: DiscordClient) => {
       "Commands: ".blue +
       `slashCommands[${commands.length}] & messageCommands[${client.commands.filter(a => a.only_message).size}]`.cyan + `\n` +
       "Discord.js: ".blue +
-      `v${require("discord.js").version}`.cyan + `\n` +
+      `v${version}`.cyan + `\n` +
       "Node.js: ".blue +
       `${process.version}`.cyan + `\n` +
       "Plattform: ".blue +

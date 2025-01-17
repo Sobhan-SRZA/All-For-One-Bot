@@ -1,12 +1,12 @@
 import { ApplicationCommandOptionType, ApplicationCommandType, ChannelType, CommandInteraction, CommandInteractionOptionResolver, EmbedBuilder, GuildMember, Message, PermissionFlagsBits, PermissionsBitField } from "discord.js";
 import CommandType from "../../types/command";
 import error from "../../utils/error";
-import DiscordClient from "../../classes/Client";
-import response from "../../utils/response";
 import getAuthor from "../../utils/getAuthor";
 import Database from "../../classes/Database";
 import HexToNumber from "../../functions/HexToNumber";
 import EmbedData from "../../storage/embed";
+import { BotChannels } from "../../classes/DatabaseTables";
+
 const setup: CommandType = {
   data: {
     name: "setup",
@@ -78,6 +78,7 @@ const setup: CommandType = {
           const
             whiteListChannel = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getChannel("white-list") : args![1],
             blackListChannel = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getChannel("black-list") : args![2],
+            database = new BotChannels(),
             embed = new EmbedBuilder()
               .setAuthor({ name: "Admin Panel | bot-channels" })
               .setColor(HexToNumber(EmbedData.color.theme));
