@@ -59,7 +59,7 @@ exports.default = async (client) => {
             "Commands: ".blue +
             `slashCommands[${commands.length}] & messageCommands[${client.commands.filter(a => a.only_message).size}]`.cyan + `\n` +
             "Discord.js: ".blue +
-            `v${require("discord.js").version}`.cyan + `\n` +
+            `v${discord_js_1.version}`.cyan + `\n` +
             "Node.js: ".blue +
             `${process.version}`.cyan + `\n` +
             "Plattform: ".blue +

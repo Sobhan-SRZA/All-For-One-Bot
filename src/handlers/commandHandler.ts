@@ -1,8 +1,9 @@
 import DiscordClient from "../classes/Client";
 import error from "../utils/error";
 import firstUpperCase from "../functions/firstUpperCase";
-import loadCommand from "../utils/loadCommand";
 import post from "../functions/post";
+import CommandType from "../types/command";
+import { readdirSync } from "fs";
 
 export default async (client: DiscordClient) => {
     try {
@@ -15,6 +16,37 @@ export default async (client: DiscordClient) => {
         error(e)
     }
 };
+
+// Function
+async function loadCommand(dirname: string, type: "only_slash" | "only_message", object: Map<string, any>) {
+    try {
+        for (const dirs of readdirSync(dirname)) {
+            const commandFiles = readdirSync(`${dirname}/${dirs}`)
+                .filter(files => files.endsWith(".js"));
+
+            for (const file of commandFiles) {
+                const commandData = await import(`${dirname}/${dirs}/${file}`);
+                const command: CommandType = commandData.default || commandData;
+                if (command[type])
+                    object.set(command.data.name, command);
+
+                else {
+                    post(
+                        `${firstUpperCase(type.replace("only_", ""))} Command Not Loaded: ${file}`,
+                        "E",
+                        "red",
+                        "red"
+                    );
+                    continue;
+                }
+            }
+
+        };
+
+    } catch (e: any) {
+        error(e)
+    }
+}
 /**
  * @copyright
  * Coded by Sobhan-SRZA (mr.sinre) | https://github.com/Sobhan-SRZA

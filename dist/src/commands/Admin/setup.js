@@ -7,6 +7,7 @@ const getAuthor_1 = tslib_1.__importDefault(require("../../utils/getAuthor"));
 const Database_1 = tslib_1.__importDefault(require("../../classes/Database"));
 const HexToNumber_1 = tslib_1.__importDefault(require("../../functions/HexToNumber"));
 const embed_1 = tslib_1.__importDefault(require("../../storage/embed"));
+const DatabaseTables_1 = require("../../classes/DatabaseTables");
 const setup = {
     data: {
         name: "setup",
@@ -70,7 +71,7 @@ const setup = {
             const user = (0, getAuthor_1.default)(interaction), db = new Database_1.default(client.db), Subcommand = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getSubcommand() : args[0];
             switch (Subcommand) {
                 case "bot-channels": {
-                    const whiteListChannel = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getChannel("white-list") : args[1], blackListChannel = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getChannel("black-list") : args[2], embed = new discord_js_1.EmbedBuilder()
+                    const whiteListChannel = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getChannel("white-list") : args[1], blackListChannel = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getChannel("black-list") : args[2], database = new DatabaseTables_1.BotChannels(), embed = new discord_js_1.EmbedBuilder()
                         .setAuthor({ name: "Admin Panel | bot-channels" })
                         .setColor((0, HexToNumber_1.default)(embed_1.default.color.theme));
                     if (!whiteListChannel && !blackListChannel) {
