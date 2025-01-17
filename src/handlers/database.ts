@@ -1,12 +1,12 @@
 import DiscordClient from "../classes/Client";
-import { QuickDB } from "quick.db";
+import { IDriver, QuickDB } from "quick.db";
 import post from "../functions/post";
 import { error } from "console";
 import config from "../../config";
 
 export default async (client: DiscordClient) => {
     try {
-        let driver: any;
+        let driver: IDriver | undefined;
         switch (config.source.database.type) {
             case "sql": {
                 const { SqliteDriver } = await import("quick.db");
