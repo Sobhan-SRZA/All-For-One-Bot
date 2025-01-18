@@ -1,4 +1,25 @@
 # All For One Bot
+
+<div align="center">
+    <img src="https://badges.aleen42.com/src/npm.svg">
+    <img src="https://badges.aleen42.com/src/node.svg">
+    <img src="https://badges.aleen42.com/src/javascript.svg">
+    <img src="https://img.shields.io/github/v/release/Sobhan-SRZA/All-For-One-Bot?label=Version">
+    <div>
+        <img src="https://img.shields.io/github/license/Sobhan-SRZA/All-For-One-Bot?label=License">
+        <img src="https://img.shields.io/github/last-commit/Sobhan-SRZA/All-For-One-Bot?label=Last Commit">
+        <img src="https://img.shields.io/github/release-date/Sobhan-SRZA/All-For-One-Bot?label=Last Release">
+    </div>
+    <img src="https://img.shields.io/github/forks/Sobhan-SRZA/All-For-One-Bot?label=Forks">
+    <img src="https://img.shields.io/github/stars/Sobhan-SRZA/All-For-One-Bot?label=Stars">
+    <img src="https://img.shields.io/github/watchers/Sobhan-SRZA/All-For-One-Bot?label=Watchers">
+    <img src="https://img.shields.io/github/languages/code-size/Sobhan-SRZA/All-For-One-Bot?label=Code Size">
+    <img src="https://img.shields.io/github/directory-file-count/Sobhan-SRZA/All-For-One-Bot?label=Files">
+    <div>
+        <img style="display:block;margin-left:auto;margin-right:auto;width:30%;" src="https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=All-For-One-Bot&theme=react">
+    </div>
+</div>
+
 This source is full discord bot and can do anything you want.
 
 ---
