@@ -7,7 +7,7 @@ import HexToNumber from "../../functions/HexToNumber";
 import EmbedData from "../../storage/embed";
 import { BotChannels } from "../../classes/DatabaseTables";
 
-const setup: CommandType = {
+const command: CommandType = {
   data: {
     name: "setup",
     description: "تنظیمات ربات در سرور.",
@@ -101,7 +101,7 @@ const setup: CommandType = {
     }
   }
 };
-export default setup;
+export default command;
 /**
  * @copyright
  * Coded by Sobhan-SRZA (mr.sinre) | https://github.com/Sobhan-SRZA

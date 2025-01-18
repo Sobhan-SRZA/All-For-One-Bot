@@ -4,7 +4,7 @@ import error from "../../utils/error";
 import DiscordClient from "../../classes/Client";
 import response from "../../utils/response";
 import getAuthor from "../../utils/getAuthor";
-const help: CommandType = {
+const command: CommandType = {
   data: {
     name: "help",
     description: "لیست دستورات بات.",
@@ -108,7 +108,7 @@ const help: CommandType = {
     }
   }
 };
-export default help;
+export default command;
 /**
  * @copyright
  * Coded by Sobhan-SRZA (mr.sinre) | https://github.com/Sobhan-SRZA
