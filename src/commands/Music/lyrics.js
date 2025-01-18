@@ -68,12 +68,12 @@ module.exports = {
         ""
       );
 
-    const result = (await player.lyrics.search(queryFormated).catch(() => null))[0];
-    if (!result || !result.length < 0)
+    const result = (await player.lyrics.search({ q: queryFormated }).catch(() => null))[0];
+    if (!result || !result.syncedLyrics)
       return await response(interaction, "No lyrics were found for this track.");
 
     const lyrics =
-      result.plainLyrics.length > 4096 ? `${result.plainLyrics.slice(0, 4090)}...` : result.plainLyrics;
+      result.plainLyrics.length > 4096 ? `${result.plainLyrics.slice(0, 4090)} ...` : result.plainLyrics;
 
     const embed = new EmbedBuilder()
       .setTitle(result.trackName)
