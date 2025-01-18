@@ -71,7 +71,7 @@ module.exports = async (client, message) => {
             if ((await db.get(`chatBot.${message.guild.id}`)).includes(message.channel.id) || message.mentions.members.has(client.user)) {
                 message.channel.sendTyping();
                 const content = message.content.replace(message.mentions.users.first(), "").toLocaleString();
-                const answer = await chatBot(content, message.author.id);
+                const answer = await chatBot(content, message.author);
                 return await message.reply({
                     content: answer
                 });
