@@ -4,6 +4,7 @@ import error from "../../utils/error";
 import DiscordClient from "../../classes/Client";
 import response from "../../utils/response";
 import getAuthor from "../../utils/getAuthor";
+
 const command: CommandType = {
   data: {
     name: "help",

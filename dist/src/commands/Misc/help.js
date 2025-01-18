@@ -5,7 +5,7 @@ const discord_js_1 = require("discord.js");
 const error_1 = tslib_1.__importDefault(require("../../utils/error"));
 const response_1 = tslib_1.__importDefault(require("../../utils/response"));
 const getAuthor_1 = tslib_1.__importDefault(require("../../utils/getAuthor"));
-const help = {
+const command = {
     data: {
         name: "help",
         description: "لیست دستورات بات.",
@@ -95,7 +95,7 @@ const help = {
         }
     }
 };
-exports.default = help;
+exports.default = command;
 /**
  * @copyright
  * Coded by Sobhan-SRZA (mr.sinre) | https://github.com/Sobhan-SRZA

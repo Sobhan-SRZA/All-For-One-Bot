@@ -27,7 +27,7 @@ export default interface CommandType {
     only_owner: boolean;
     only_slash: boolean;
     only_message: boolean;
-    run: (client: DiscordClient, interaction: CommandInteraction | Message, args?: string[]) => Promise<void>;
+    run: (client: DiscordClient, interaction: CommandInteraction | Message, args?: string[]) => void;
 }
 
 interface CommandOption {

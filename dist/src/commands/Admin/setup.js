@@ -8,7 +8,7 @@ const Database_1 = tslib_1.__importDefault(require("../../classes/Database"));
 const HexToNumber_1 = tslib_1.__importDefault(require("../../functions/HexToNumber"));
 const embed_1 = tslib_1.__importDefault(require("../../storage/embed"));
 const DatabaseTables_1 = require("../../classes/DatabaseTables");
-const setup = {
+const command = {
     data: {
         name: "setup",
         description: "تنظیمات ربات در سرور.",
@@ -90,7 +90,7 @@ const setup = {
         }
     }
 };
-exports.default = setup;
+exports.default = command;
 /**
  * @copyright
  * Coded by Sobhan-SRZA (mr.sinre) | https://github.com/Sobhan-SRZA
