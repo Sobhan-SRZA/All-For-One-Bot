@@ -1,6 +1,7 @@
 # All For One Bot
 
 <div align="center">
+    <img src="https://badges.aleen42.com/src/npm.svg">
     <img src="https://badges.aleen42.com/src/node.svg">
     <img src="https://badges.aleen42.com/src/javascript.svg">
     <img src="https://img.shields.io/github/v/release/Sobhan-SRZA/All-For-One-Bot?label=Version">
@@ -18,8 +19,6 @@
         <img style="display:block;margin-left:auto;margin-right:auto;width:30%;" src="https://github-readme-stats.vercel.app/api/pin/?username=Sobhan-SRZA&repo=All-For-One-Bot&theme=react">
     </div>
 </div>
-
----
 
 This source is full discord bot and can do anything you want.
 
