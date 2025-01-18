@@ -1,8 +1,7 @@
 const { ApplicationCommandOptionType, ApplicationCommandType, EmbedBuilder } = require("discord.js");
-const { lyricsExtractor } = require("@discord-player/extractor");
-const lyricsFinder = lyricsExtractor();
-const { useQueue } = require("discord-player");
+const { useQueue, useMainPlayer } = require("discord-player");
 const error = require("../../functions/error");
+const response = require("../../functions/response");
 module.exports = {
   name: "lyrics",
   description: "Get lyrics for a track.",
@@ -32,29 +31,35 @@ module.exports = {
    * @returns 
    */
   run: async (client, interaction, args) => {
+    const player = useMainPlayer();
     const queue = useQueue(interaction.guild.id);
-    if (!queue)
-      return interaction.reply({
-        content: "I’m currently not playing in this server.",
-        ephemeral: true
-      });
+    let query = interaction.user ? interaction.options.getString("query") : args.join(" ");
+    if (!query) {
+      if (!queue)
+        return await response(interaction, {
+          content: "I’m currently not playing in this server.",
+          ephemeral: true
+        });
 
-    const memberChannelId = interaction.member?.voice?.channelId;
-    const queueChannelId = queue?.channel.id;
-    if (!memberChannelId)
-      return interaction.reply({
-        content: "You need to join a voice channel first!",
-        ephemeral: true
-      });
+      const memberChannelId = interaction.member?.voice?.channelId;
+      const queueChannelId = queue?.channel.id;
+      if (!memberChannelId)
+        return await response(interaction, {
+          content: "You need to join a voice channel first!",
+          ephemeral: true
+        });
 
-    if (memberChannelId !== queueChannelId)
-      return interaction.reply({
-        content: "You must be in the same voice channel as me!",
-        ephemeral: true
-      });
+      if (memberChannelId !== queueChannelId)
+        return await response(interaction, {
+          content: "You must be in the same voice channel as me!",
+          ephemeral: true
+        });
 
-    const query = interaction.user ? interaction.options.getString("query") : args.join(" ") ?? queue?.currentTrack?.title;
-    if (!query) return interaction.reply("You forgot to provide the track name.");
+      query = queue?.currentTrack?.title;
+    }
+
+    if (!query)
+      return await response(interaction, "You forgot to provide the track name.");
 
     const queryFormated = query
       .toLowerCase()
@@ -63,26 +68,21 @@ module.exports = {
         ""
       );
 
-    const result = await lyricsFinder.search(queryFormated).catch(() => null);
-
-    if (!result || !result.lyrics)
-      return interaction.reply("No lyrics were found for this track.");
+    const result = (await player.lyrics.search(queryFormated).catch(() => null))[0];
+    if (!result || !result.length < 0)
+      return await response(interaction, "No lyrics were found for this track.");
 
     const lyrics =
-      result.lyrics.length > 4096 ? `${result.lyrics.slice(0, 4090)}...` : result.lyrics;
+      result.plainLyrics.length > 4096 ? `${result.plainLyrics.slice(0, 4090)}...` : result.plainLyrics;
 
     const embed = new EmbedBuilder()
-      .setTitle(result.title)
-      .setURL(result.url)
-      .setThumbnail(result.thumbnail)
+      .setTitle(result.trackName)
       .setAuthor({
-        name: result.artist.name,
-        iconURL: result.artist.image,
-        url: result.artist.url
+        name: result.artistName
       })
       .setDescription(lyrics);
 
-    return interaction.reply({ embeds: [embed] }).catch(error);
+    return await response(interaction, { embeds: [embed] }).catch(error);
   }
 };
 /**

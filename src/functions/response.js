@@ -6,7 +6,7 @@ const error = require("./error");
  * @param {import("discord.js").BaseMessageOptions} data 
  * @returns {import("discord.js").InteractionResponse}
  */
-module.exports = async function (interaction, data) {
+module.exports = async function response(interaction, data) {
     try {
         if (interaction.user) {
             return await interaction.editReply(data);
