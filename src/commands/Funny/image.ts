@@ -1,4 +1,4 @@
-import { ApplicationCommandOptionType, ApplicationCommandType, AttachmentBuilder, CommandInteraction, CommandInteractionOptionResolver, EmbedBuilder, PermissionFlagsBits, PermissionsBitField } from "discord.js";
+import { ApplicationCommandOptionType, ApplicationCommandType, AttachmentBuilder, CommandInteraction, CommandInteractionOptionResolver, EmbedBuilder, Message, PermissionFlagsBits, PermissionsBitField } from "discord.js";
 import CommandType from "../../types/command";
 import error from "../../utils/error";
 import getAuthor from "../../utils/getAuthor";
@@ -144,11 +144,15 @@ const command: CommandType = {
       switch (Subcommand) {
         case "kiss": {
           const
-            member = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getMember("user") : interaction.guild?.members.cache.get(args![1]),
-            type = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getString("type") : interaction.guild?.members.cache.get(args![2]);
+            member = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getMember("user") : interaction instanceof Message && interaction.mentions.members?.first() || interaction.guild?.members.cache.get(args![1]),
+            type = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getString("type") : args![2],
+            types = ["gay", "lesbian"];
 
           if (!member)
             return await responseError(interaction, "لطفا یوزر را وارد کنید.");
+
+          if (!type || !types.includes(type.toLowerCase()))
+            return await responseError(interaction, `فقط میتوانید دو نوع را انتخاب کنید:\n [ ${types.join(" | ")} ]`);
 
           switch (type) {
             case "gay": {
@@ -197,11 +201,15 @@ const command: CommandType = {
 
         case "anime": {
           const
-            member = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getMember("user") : interaction.guild?.members.cache.get(args![1]),
-            type = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getString("type") : interaction.guild?.members.cache.get(args![2]);
+            member = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getMember("user") : interaction instanceof Message && interaction.mentions.members?.first() || interaction.guild?.members.cache.get(args![1]),
+            type = interaction instanceof CommandInteraction && interaction.options instanceof CommandInteractionOptionResolver ? interaction.options.getString("type") : args![2],
+            types = ["kiss", "hug", "slap", "pat", "feed"];
 
           if (!member)
             return await responseError(interaction, "لطفا یوزر را وارد کنید.");
+
+          if (!type || !types.includes(type.toLowerCase()))
+            return await responseError(interaction, `فقط میتوانید دو نوع را انتخاب کنید:\n [ ${types.join(" | ")} ]`);
 
           switch (type) {
             case "kiss": {

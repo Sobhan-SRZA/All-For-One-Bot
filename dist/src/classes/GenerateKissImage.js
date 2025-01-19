@@ -47,7 +47,7 @@ class GenerateKissImage {
             const ctx = canvas.getContext("2d");
             if (this.isGay) {
                 // Draw background
-                const bg = await (0, canvas_1.loadImage)(images_1.default.generate.gay);
+                const bg = await (0, canvas_1.loadImage)((await jimp_1.Jimp.read(images_1.default.generate.gay)).toString());
                 ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
                 // Draw first image
                 const user = await (0, canvas_1.loadImage)((await jimp_1.Jimp.read(this.avatar2)).circle().toString());
@@ -58,7 +58,7 @@ class GenerateKissImage {
             }
             else if (this.isLesbian) {
                 // Draw background
-                const bg = await (0, canvas_1.loadImage)(images_1.default.generate.lesbian);
+                const bg = await (0, canvas_1.loadImage)((await jimp_1.Jimp.read(images_1.default.generate.lesbian)).toString());
                 ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
                 // Draw first image
                 const user = await (0, canvas_1.loadImage)((await jimp_1.Jimp.read(this.avatar2)).circle().toString());

@@ -1,7 +1,9 @@
 const Images = {
   generate: {
-    gay: "https://imgurl.ir/uploads/g404002__kiss.png",
-    lesbian: "https://imgurl.ir/uploads/r412301_lesbian_kiss.png"
+    gay: "https://cdn.discordapp.com/attachments/918784739673001984/1127266613842935858/gay_kiss.jpg",
+    lesbian: "https://cdn.discordapp.com/attachments/918784739673001984/1127298871069003886/lesbian_kiss.jpg"
+    // gay: "https://imgurl.ir/uploads/g404002__kiss.png",
+    // lesbian: "https://imgurl.ir/uploads/r412301_lesbian_kiss.png"
   }
 }
 export default Images;

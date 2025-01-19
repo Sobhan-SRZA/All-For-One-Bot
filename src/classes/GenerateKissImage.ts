@@ -51,7 +51,7 @@ export default class GenerateKissImage {
 
       if (this.isGay) {
         // Draw background
-        const bg = await loadImage(Images.generate.gay);
+        const bg = await loadImage((await Jimp.read(Images.generate.gay)).toString());
         ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
 
         // Draw first image
@@ -66,7 +66,7 @@ export default class GenerateKissImage {
 
       else if (this.isLesbian) {
         // Draw background
-        const bg = await loadImage(Images.generate.lesbian);
+        const bg = await loadImage((await Jimp.read(Images.generate.lesbian)).toString());
         ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
 
         // Draw first image

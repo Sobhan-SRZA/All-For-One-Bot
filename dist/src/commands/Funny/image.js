@@ -140,9 +140,11 @@ const command = {
             const user = (0, getAuthor_1.default)(interaction), Subcommand = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getSubcommand() : args[0];
             switch (Subcommand) {
                 case "kiss": {
-                    const member = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getMember("user") : interaction.guild?.members.cache.get(args[1]), type = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getString("type") : interaction.guild?.members.cache.get(args[2]);
+                    const member = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getMember("user") : interaction instanceof discord_js_1.Message && interaction.mentions.members?.first() || interaction.guild?.members.cache.get(args[1]), type = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getString("type") : args[2], types = ["gay", "lesbian"];
                     if (!member)
                         return await (0, responseError_1.default)(interaction, "لطفا یوزر را وارد کنید.");
+                    if (!type || !types.includes(type.toLowerCase()))
+                        return await (0, responseError_1.default)(interaction, `فقط میتوانید دو نوع را انتخاب کنید:\n [ ${types.join(" | ")} ]`);
                     switch (type) {
                         case "gay": {
                             const image = await new GenerateKissImage_1.default(user.displayAvatarURL({ extension: "jpg", size: 4096 }), member.displayAvatarURL({ extension: "jpg", size: 4096 }), true).generate();
@@ -181,9 +183,11 @@ const command = {
                 }
                 case "anime":
                     {
-                        const member = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getMember("user") : interaction.guild?.members.cache.get(args[1]), type = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getString("type") : interaction.guild?.members.cache.get(args[2]);
+                        const member = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getMember("user") : interaction instanceof discord_js_1.Message && interaction.mentions.members?.first() || interaction.guild?.members.cache.get(args[1]), type = interaction instanceof discord_js_1.CommandInteraction && interaction.options instanceof discord_js_1.CommandInteractionOptionResolver ? interaction.options.getString("type") : args[2], types = ["kiss", "hug", "slap", "pat", "feed"];
                         if (!member)
                             return await (0, responseError_1.default)(interaction, "لطفا یوزر را وارد کنید.");
+                        if (!type || !types.includes(type.toLowerCase()))
+                            return await (0, responseError_1.default)(interaction, `فقط میتوانید دو نوع را انتخاب کنید:\n [ ${types.join(" | ")} ]`);
                         switch (type) {
                             case "kiss": {
                                 const image = await (0, getLinkResponse_1.default)("https://nekos.life/api/kiss");
