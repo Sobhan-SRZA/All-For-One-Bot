@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const canvas_1 = require("@napi-rs/canvas");
 const error_1 = tslib_1.__importDefault(require("../utils/error"));
-const images_1 = tslib_1.__importDefault(require("../storage/images"));
 const jimp_1 = require("jimp");
+const fs_1 = require("fs");
 class GenerateKissImage {
     isGay;
     isLesbian;
@@ -47,7 +47,8 @@ class GenerateKissImage {
             const ctx = canvas.getContext("2d");
             if (this.isGay) {
                 // Draw background
-                const bg = await (0, canvas_1.loadImage)((await jimp_1.Jimp.read(images_1.default.generate.gay)).toString());
+                // const bg = await loadImage((await Jimp.read(Images.generate.gay)).toString());
+                const bg = await (0, canvas_1.loadImage)((0, fs_1.readFileSync)("./src/storage/images/g404002__kiss.png"));
                 ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
                 // Draw first image
                 const user = await (0, canvas_1.loadImage)((await jimp_1.Jimp.read(this.avatar2)).circle().toString());
@@ -58,7 +59,8 @@ class GenerateKissImage {
             }
             else if (this.isLesbian) {
                 // Draw background
-                const bg = await (0, canvas_1.loadImage)((await jimp_1.Jimp.read(images_1.default.generate.lesbian)).toString());
+                // const bg = await loadImage((await Jimp.read(Images.generate.lesbian)).toString());
+                const bg = await (0, canvas_1.loadImage)((0, fs_1.readFileSync)("./src/storage/images/r412301_lesbian_kiss.png"));
                 ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
                 // Draw first image
                 const user = await (0, canvas_1.loadImage)((await jimp_1.Jimp.read(this.avatar2)).circle().toString());

@@ -2,6 +2,7 @@ import { Canvas, createCanvas, loadImage, SKRSContext2D } from "@napi-rs/canvas"
 import error from "../utils/error";
 import Images from "../storage/images";
 import { Jimp } from "jimp";
+import { readFileSync } from "fs";
 
 export default class GenerateKissImage {
 
@@ -51,7 +52,8 @@ export default class GenerateKissImage {
 
       if (this.isGay) {
         // Draw background
-        const bg = await loadImage((await Jimp.read(Images.generate.gay)).toString());
+        // const bg = await loadImage((await Jimp.read(Images.generate.gay)).toString());
+        const bg = await loadImage(readFileSync("./src/storage/images/g404002__kiss.png"));
         ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
 
         // Draw first image
@@ -66,7 +68,8 @@ export default class GenerateKissImage {
 
       else if (this.isLesbian) {
         // Draw background
-        const bg = await loadImage((await Jimp.read(Images.generate.lesbian)).toString());
+        // const bg = await loadImage((await Jimp.read(Images.generate.lesbian)).toString());
+        const bg = await loadImage(readFileSync("./src/storage/images/r412301_lesbian_kiss.png"));
         ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
 
         // Draw first image
